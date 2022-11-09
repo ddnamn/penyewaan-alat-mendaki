@@ -50,6 +50,7 @@ error_reporting(0);
             <?php   if(strlen($_SESSION['login'])==0)
             { 
               ?>
+              <h3 style="color:dark ;">Alat Pendakian Gunung Semeru</h3>
               <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="btn-banner">Login / Register</a> 
               <?php 
             }?>
@@ -66,7 +67,7 @@ error_reporting(0);
       <section id="services">
         <div class="container">
           <div class="section-header">
-            <h2>Find the Best Car for you</h2>
+            <h2>Alat Pendaki terpopuler</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
           </div>
 
