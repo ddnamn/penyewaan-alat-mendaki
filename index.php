@@ -87,11 +87,11 @@ error_reporting(0);
                   <div class="car-info-box">
                     <a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" style="height: 180px; width: 280px;" class="img-responsive"  alt="image" >
                     </a>
-                    <ul style=" width: 280px;">
-                      <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
+                    <!--<ul style=" width: 280px;">
+                      <li><i class="fa-solid fa-info" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
                       <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> Model</li>
                       <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
-                    </ul>
+                    </ul> -->
                     <div class="car-title-m">
                       <h6><a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>"> <?php echo substr($result->VehiclesTitle,0,21);?></a></h6>
                       <span class="price">$<?php echo htmlentities($result->PricePerDay);?> /Day</span> 

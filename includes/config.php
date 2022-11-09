@@ -3,7 +3,7 @@
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','carrental_db');
+define('DB_NAME','rental_db');
 // Establish database connection.
 try
 {
