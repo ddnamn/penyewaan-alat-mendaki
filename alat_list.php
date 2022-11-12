@@ -7,7 +7,7 @@ error_reporting(0);
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Car Rental | Car List</title>
+  <title>Climbing Rental | Equiment List</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -38,7 +38,7 @@ error_reporting(0);
  <?php include('includes/header.php');?>
  <section id="innerBanner"> 
   <div class="inner-content">
-    <h2><span>Car Listing</span><br>We provide high quality cars!</h2>
+    <h2><span> List Barang</span><br>We provide high quality !</h2>
     <div> 
     </div>
   </div> 
