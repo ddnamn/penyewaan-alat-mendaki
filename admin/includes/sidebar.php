@@ -72,20 +72,20 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Car management</span>
+                <span class="menu-title">tools management</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-car menu-icon"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="register_car.php">register car</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="manage_car.php">Manage Cars</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="register_alat.php">register tools</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="manage_alat.php">Manage tools</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#bookings" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">Car Bookings</span>
+                <span class="menu-title">tools Bookings</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-briefcase-check menu-icon"></i>
             </a>

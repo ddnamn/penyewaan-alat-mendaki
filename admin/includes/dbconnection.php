@@ -3,7 +3,7 @@
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','carrental_db');
+define('DB_NAME','rental1_db');
 // Establish database connection.
 try
 {
@@ -13,7 +13,7 @@ catch (PDOException $e)
 {
 exit("Error: " . $e->getMessage());
 }
-$con=mysqli_connect("localhost", "root", "", "carrental_db");
+$con=mysqli_connect("localhost", "root", "", "rental1_db");
 if(mysqli_connect_errno()){
 echo "Connection Fail".mysqli_connect_error();
 }

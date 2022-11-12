@@ -8,7 +8,7 @@ error_reporting(0);
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Car rental portal</title>
+  <title>Alat Pendakian Semeru</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -38,27 +38,10 @@ error_reporting(0);
 
 <body id="body">
      <?php include('includes/header.php');?>
-  
-    <section id="hero" class="clearfix">
-      <div class="container">
-
-        <div class="hero-banner">
-        </div>
-
-        <div class="hero-content">
-          <div>
-            <?php   if(strlen($_SESSION['login'])==0)
-            { 
-              ?>
-              <h3 style="color:dark ;">Alat Pendakian Gunung Semeru</h3>
-              <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="btn-banner">Login / Register</a> 
-              <?php 
-            }?>
-         </div>
-       </div>
-
-     </div> 
-   </section><!-- #Hero -->
+     <div class="p-5 bg-primary text-white rounded">
+        <h1>Jumbotron Example</h1> 
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p> 
+     </div>
 
    <main id="main">
     <!--==========================
@@ -85,16 +68,11 @@ error_reporting(0);
               <div class="col-lg-4">
                 <div class="box wow  fadeInLeft">
                   <div class="car-info-box">
-                    <a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" style="height: 180px; width: 280px;" class="img-responsive"  alt="image" >
+                    <a href="alat_details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" style="height: 180px; width: 280px;" class="img-responsive"  alt="image" >
                     </a>
-                    <!--<ul style=" width: 280px;">
-                      <li><i class="fa-solid fa-info" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
-                      <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> Model</li>
-                      <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
-                    </ul> -->
                     <div class="car-title-m">
                       <h6><a href="car_details.php?vhid=<?php echo htmlentities($result->id);?>"> <?php echo substr($result->VehiclesTitle,0,21);?></a></h6>
-                      <span class="price">$<?php echo htmlentities($result->PricePerDay);?> /Day</span> 
+                      <span class="price">Rp<?php echo htmlentities($result->PricePerDay);?> /Day</span> 
                     </div>
                     <div class="inventory_info_m ">
                       <p><?php echo substr($result->VehiclesOverview,0,70);?></p>
@@ -119,14 +97,14 @@ error_reporting(0);
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
           </div>
 
-          <div class="owl-carousel clients-carousel">
+         <!-- <div class="owl-carousel clients-carousel">
             <img src="img/clients/client-1.png" alt="">
             <img src="img/clients/client-2.png" alt="">
             <img src="img/clients/client-3.png" alt="">
             <img src="img/clients/client-4.png" alt="">
             <img src="img/clients/client-5.png" alt="">
             <img src="img/clients/client-6.png" alt="">
-          </div>
+          </div> -->
 
         </div>
       </section><!-- #clients --> 
@@ -135,7 +113,7 @@ error_reporting(0);
         <div class="container">
           <div class="row">
             <div class="col-lg-9 text-center text-lg-left">
-              <h3 class="cta-title">Get Our Service</h3>
+              <h3 class="cta-title">Layanan Kami</h3>
               <p class="cta-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
             <div class="col-lg-3 cta-btn-container text-center">

@@ -30,7 +30,7 @@ $query -> execute();
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="modal-header">
-                  <h5 class="modal-title" style="float: left;">Manage Cars</h5>
+                  <h5 class="modal-title" style="float: left;">Manage tools</h5>
                 </div>
                 
                 <div class="table-responsive p-3">
@@ -68,8 +68,8 @@ $query -> execute();
                             <td><?php echo htmlentities($row->FuelType);?></td>
                             <td><?php echo htmlentities($row->ModelYear);?></td>
                             <td>
-                              <a href="edit_car.php?id=<?php echo $row->id;?>" title="click to edit"><i class="mdi mdi-pencil-box-outline" aria-hidden="true"></i></a>
-                              <a href="manage_car.php?del=<?php echo $row->id;?>" onclick="return confirm('Do you want to delete');"><i class="mdi mdi-delete"></i></i></a>
+                              <a href="edit_alat.php?id=<?php echo $row->id;?>" title="click to edit"><i class="mdi mdi-pencil-box-outline" aria-hidden="true"></i></a>
+                              <a href="manage_alat.php?del=<?php echo $row->id;?>" onclick="return confirm('Do you want to delete');"><i class="mdi mdi-delete"></i></i></a>
                             </td>
                           </tr>
                           <?php 

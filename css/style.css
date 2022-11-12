@@ -3300,7 +3300,8 @@ input[type="button"].btn-block {
     width: 100%;
 }
 
-.fade {
+
+/* .fade {
     opacity: 0;
     transition: opacity 0.15s linear;
 }
@@ -3308,6 +3309,7 @@ input[type="button"].btn-block {
 .fade.show {
     opacity: 1;
 }
+*/
 
 .collapse {
     display: none;
@@ -9480,19 +9482,23 @@ h6 {
 # Intro Section
 --------------------------------------------------------------*/
 
-#hero {
+.dump {
     width: 100%;
     position: relative;
-    background: url(../img/intro-carousel/bg_semeru.jpg) center no-repeat;
+    background-color: white;
+    background: url(/img/intro-carousel/bg_semeru.jpg);
     background-size: cover;
     padding: 200px 0 120px 0;
     top: 0px;
 }
 
+
+/*
 #hero .hero-banner {
     width: 30%;
     float: right;
     height: 200px;
+    background-color: #000;
 }
 
 #hero .hero-content {
@@ -9590,7 +9596,7 @@ h6 {
     background-repeat: no-repeat;
     -webkit-transition-property: opacity;
     transition-property: opacity;
-}
+}*/
 
 
 /*--------------------------------------------------------------
@@ -11744,7 +11750,6 @@ nav.navbar {
   -------------------------------*/
 
 .banner-section {
-    background-image: url("../images/banner-image.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

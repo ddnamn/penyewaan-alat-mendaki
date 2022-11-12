@@ -7,7 +7,7 @@ error_reporting(0);
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Car rental portal</title>
+  <title>rental alat pendakian</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -38,7 +38,7 @@ error_reporting(0);
  <?php include('includes/header.php');?>
  <section id="innerBanner"> 
   <div class="inner-content">
-    <h2><span>Contact</span><br>We simplify your journey!</h2>
+    <h2><span>Contact</span><br>Hubungi Kami</h2>
     <div> 
     </div>
   </div> 
@@ -61,17 +61,17 @@ error_reporting(0);
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
               <h3>Address</h3>
-              <address>AG-12 Street, Luthuli Avenue, California</address>
+              <address>Jl. Ketintang , surabaya</address>
             </div> 
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 2885 65590 12</a></p>
+              <p><a href="tel:+155895548855">+62 885 6550 1289</a></p>
             </div> 
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">code4berryteam@gmail.com</a></p>
+              <p><a href="mailto:info@example.com">team10tib@gmail.com</a></p>
             </div> 
           </div>
           <div class="col-lg-7">

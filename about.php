@@ -8,7 +8,7 @@ error_reporting(0);
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Car Rental | About Us</title>
+  <title>About Us</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -39,7 +39,7 @@ error_reporting(0);
  <?php include('includes/header.php');?>
  <section id="innerBanner"> 
   <div class="inner-content">
-    <h2><span>About Us</span><br>We provide high quality cars</h2>
+    <h2><span>About Us</span><br>Memberikan Kualitas terbaik</h2>
     <div> 
     </div>
   </div> 
@@ -50,18 +50,13 @@ error_reporting(0);
         <div class="container"> 
           <div class="row">
             <div class="col-lg-6 about-img">
-              <img src="img/nissan.jpg" alt="">
+              <img src="" alt="">
             </div>
 
             <div class="col-lg-6 content">
               <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-              <h3>Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident</h3>
-              <p>Consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat</p>
-              <ul>
-                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro consequatur aliquam, incidunt fugiat culpa.</li>
-                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro consequatur aliquam, culpa esse aute nulla.</li>
-                <li><i class="icon ion-ios-checkmark-outline"></i> Dolores quae porro esse aute nulla. malis nulla duis fugiat</li>
-              </ul> 
+              <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ullam officia similique. Similique molestiae esse id nesciunt ea aut deleniti mollitia odio laborum quibusdam, aliquam, perferendis ex eaque atque alias!</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, consectetur sunt eligendi doloremque porro vero unde ab esse voluptatem pariatur placeat sed veritatis voluptatibus recusandae ut deserunt laborum similique nobis?</p> 
             </div>
           </div>
 

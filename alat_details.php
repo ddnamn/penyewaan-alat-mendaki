@@ -55,7 +55,7 @@ if(isset($_POST['submit']))
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Car Rental|Car Details</title>
+  <title>Deskripsi alat</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -86,7 +86,7 @@ if(isset($_POST['submit']))
  <?php include('includes/header.php');?>
  <section id="innerBanner"> 
   <div class="inner-content">
-    <h2><span>ABOUT CAR</span><br>We provide high quality and well serviced cars </h2>
+    <h2><span>Deskripsi</span><br> </h2>
     <div> 
     </div>
   </div> 
@@ -99,7 +99,7 @@ if(isset($_POST['submit']))
       <section id="clients"  class="wow fadeInUp">
         <div class="container">
           <div class="section-header">
-            <h2>Car details</h2>
+            <h2>Detail alat</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
           </div>
           <?php 
@@ -118,9 +118,6 @@ if(isset($_POST['submit']))
               ?>  
               <div class="owl-carousel clients-carousel">
                 <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="" style="height: 150px; width:300px;">
-                <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage2);?>" alt="" style="height: 150px; width: 300px;">
-                <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage3);?>" alt="" style="height: 150px; width: 300px;">
-                <img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage4);?>" alt="" style="height: 150px; width: 300px;">
               </div>
             </div>
           </section><!-- #clients -->
@@ -134,14 +131,14 @@ if(isset($_POST['submit']))
                 </div>
                 <div class="col-md-3">
                   <div class="price_info">
-                    <p>$<?php echo htmlentities($result->PricePerDay);?> </p>Per Day
+                    <p>Rp<?php echo htmlentities($result->PricePerDay);?> </p>Per Day
 
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-9">
-                  <div class="main_features">
+                  <!-- <div class="main_features">
                     <ul>
 
                       <li> <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -158,14 +155,14 @@ if(isset($_POST['submit']))
                         <p>Seats</p>
                       </li>
                     </ul>
-                  </div>
+                  </div> -->
                   <div class="listing_more_info">
                     <div class="listing_detail_wrap"> 
                       <!-- Nav tabs -->
                       <ul class="nav nav-tabs gray-bg" role="tablist">
-                        <li role="presentation" class="active"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" style="background-color: #49a3ff;" data-toggle="tab">Vehicle Overview </a></li>
+                        <li role="presentation" class="active"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" style="background-color: #49a3ff;" data-toggle="tab">Deskripsi </a></li>
 
-                        <li role="presentation"><a href="#accessories" aria-controls="accessories" role="tab" data-toggle="tab">Accessories</a></li>
+                        <!-- <li role="presentation"><a href="#accessories" aria-controls="accessories" role="tab" data-toggle="tab">Accessories</a></li> -->
                       </ul>
 
                       <!-- Tab panes -->
@@ -380,7 +377,7 @@ if(isset($_POST['submit']))
         <div class="divider"></div>
 
         <!--Similar-Cars-->
-        <div class="similar_cars">
+        <!-- <div class="similar_cars">
           <h3>Similar Cars</h3>
           <div class="row">
             <?php 
@@ -418,7 +415,7 @@ if(isset($_POST['submit']))
            } ?>       
 
          </div>
-       </div>
+       </div> -->
        <!--/Similar-Cars--> 
 
      </div>
