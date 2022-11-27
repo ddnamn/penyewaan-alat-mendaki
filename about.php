@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include('includes/config.php');
 error_reporting(0);
@@ -6,6 +6,7 @@ error_reporting(0);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>About Us</title>
@@ -32,55 +33,56 @@ error_reporting(0);
   <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet"> 
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body id="body"> 
- <?php include('includes/header.php');?>
- <section id="innerBanner"> 
-  <div class="inner-content">
-    <h2><span>About Us</span><br>Memberikan Kualitas terbaik</h2>
-    <div> 
+<body id="body">
+  <?php include('includes/header.php'); ?>
+  <section id="innerBanner">
+    <div class="inner-content">
+      <h2><span>About Us</span><br>Memberikan Kualitas terbaik</h2>
+      <div>
+      </div>
     </div>
-  </div> 
-</section><!-- #Page Banner -->
+  </section><!-- #Page Banner -->
 
-<main id="main">
-      <section id="about" class="wow fadeInUp">
-        <div class="container"> 
-          <div class="row">
-            <div class="col-lg-6 about-img">
-              <img src="" alt="">
-            </div>
-
-            <div class="col-lg-6 content">
-              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-              <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ullam officia similique. Similique molestiae esse id nesciunt ea aut deleniti mollitia odio laborum quibusdam, aliquam, perferendis ex eaque atque alias!</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, consectetur sunt eligendi doloremque porro vero unde ab esse voluptatem pariatur placeat sed veritatis voluptatibus recusandae ut deserunt laborum similique nobis?</p> 
-            </div>
+  <main id="main">
+    <section id="about" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="img/about.jpg" alt="climb">
           </div>
 
+          <div class="col-lg-6 content">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ullam officia similique. Similique molestiae esse id nesciunt ea aut deleniti mollitia odio laborum quibusdam, aliquam, perferendis ex eaque atque alias!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, consectetur sunt eligendi doloremque porro vero unde ab esse voluptatem pariatur placeat sed veritatis voluptatibus recusandae ut deserunt laborum similique nobis?</p>
+          </div>
         </div>
-      </section><!-- #about -->
-    </main>
-    <?php include('includes/footer.php');?>
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+      </div>
+    </section><!-- #about -->
+  </main>
+  <?php include('includes/footer.php'); ?>
 
-    <!-- JavaScript  -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/superfish/hoverIntent.js"></script>
-    <script src="lib/superfish/superfish.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/magnific-popup/magnific-popup.min.js"></script>
-    <script src="lib/sticky/sticky.js"></script> 
-    <script src="contact/jqBootstrapValidation.js"></script>
-    <script src="contact/contact_me.js"></script>
-    <script src="js/main.js"></script>
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  </body>
-  </html>
+  <!-- JavaScript  -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/sticky/sticky.js"></script>
+  <script src="contact/jqBootstrapValidation.js"></script>
+  <script src="contact/contact_me.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
