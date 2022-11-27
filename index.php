@@ -64,7 +64,7 @@ error_reporting(0);
         </div>
 
         <div class="row">
-          <?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand order by rand() limit 9 ";
+          <?php $sql = "SELECT tbltools.VehiclesTitle,tblbrands.BrandName,tbltools.PricePerDay,tbltools.FuelType,tbltools.ModelYear,tbltools.id,tbltools.SeatingCapacity,tbltools.VehiclesOverview,tbltools.Vimage1 from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand order by rand() limit 9 ";
           $query = $dbh->prepare($sql);
           $query->execute();
           $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -75,7 +75,7 @@ error_reporting(0);
               <div class="col-lg-4">
                 <div class="box wow  fadeInLeft">
                   <div class="car-info-box">
-                    <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" style="height: 180px; width: 280px;" class="img-responsive" alt="image">
+                    <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" style="height: 180px; width: 280px;" class="img-responsive" alt="image">
                     </a>
                     <div class="car-title-m">
                       <h6><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"> <?php echo substr($result->VehiclesTitle, 0, 21); ?></a></h6>
@@ -116,7 +116,7 @@ error_reporting(0);
       </div>
     </section><!-- #clients -->
 
-    <section id="call-to-action" class="wow fadeInUp">
+    <!-- <section id="call-to-action" class="wow fadeInUp">
       <div class="container">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
@@ -129,7 +129,8 @@ error_reporting(0);
         </div>
 
       </div>
-    </section><!-- #call-to-action -->
+    </section> -->
+    <!-- #call-to-action -->
 
 
   </main>

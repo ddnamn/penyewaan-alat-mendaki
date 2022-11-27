@@ -10299,7 +10299,7 @@ p.help-block li {
 
 /* Call To Action Section
 --------------------------------*/
-
+/* 
 #call-to-action {
     background: #278bf2;
     background-size: cover;
@@ -10343,7 +10343,7 @@ p.help-block li {
     border: 3px solid #ffffff;
     color: #00a3d1;
 }
-
+ */
 
 /* Our Team Section
 --------------------------------*/
@@ -10597,7 +10597,7 @@ p.help-block li {
 @charset "utf-8";
 
 /*
-Theme Name: CarForYou - Responsive Car Dealer HTML5 Template.
+Theme Name: CarForYou - Responsive ToolsDealer HTML5 Template.
 Author: WMD Team
 Version:1.0
 */
@@ -11849,7 +11849,7 @@ nav.navbar {
   3.3. About-Us-Section
   -------------------------------*/
 
-.looking-car {
+.looking-Tools{
     border: 3px solid #e1e1e1;
     border-radius: 0 30px;
     padding: 58px 25px;
@@ -11857,7 +11857,7 @@ nav.navbar {
     width: 450px;
 }
 
-.looking-car span {
+.looking-Toolsspan {
     font-weight: 300;
 }
 
@@ -15758,7 +15758,7 @@ table.info-tabel tr td {
     .banner_content {
         padding-left: 0;
     }
-    .looking-car {
+    .looking-Tools{
         padding: 30px;
         width: auto;
         margin: 0 auto 40px;
@@ -16241,7 +16241,7 @@ table.info-tabel tr td {
     .banner-section {
         padding: 100px 0;
     }
-    .looking-car {
+    .looking-Tools{
         padding: 30px;
         width: auto;
     }

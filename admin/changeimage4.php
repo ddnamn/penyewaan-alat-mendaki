@@ -2,31 +2,31 @@
 include('includes/checklogin.php');
 check_login();
 include('includes/config.php');
-if(isset($_POST['update']))
-{
-  $vimage=$_FILES["img4"]["name"];
-  $id=intval($_GET['imgid']);
-  move_uploaded_file($_FILES["img4"]["tmp_name"],"img/vehicleimages/".$_FILES["img4"]["name"]);
-  $sql="update tblvehicles set Vimage4=:vimage where id=:id";
+if (isset($_POST['update'])) {
+  $vimage = $_FILES["img4"]["name"];
+  $id = intval($_GET['imgid']);
+  move_uploaded_file($_FILES["img4"]["tmp_name"], "img/vehicleimages/" . $_FILES["img4"]["name"]);
+  $sql = "update tbltools set Vimage4=:vimage where id=:id";
   $query = $dbh->prepare($sql);
-  $query->bindParam(':vimage',$vimage,PDO::PARAM_STR);
-  $query->bindParam(':id',$id,PDO::PARAM_STR);
+  $query->bindParam(':vimage', $vimage, PDO::PARAM_STR);
+  $query->bindParam(':id', $id, PDO::PARAM_STR);
   $query->execute();
 
-  $msg="Image updated successfully";
+  $msg = "Image updated successfully";
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php @include("includes/head.php");?>
+<?php @include("includes/head.php"); ?>
+
 <body>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
-    <?php @include("includes/header.php");?>
+    <?php @include("includes/header.php"); ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:../../partials/_sidebar.html -->
-      <?php @include("includes/sidebar.php");?>
+      <?php @include("includes/sidebar.php"); ?>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -35,44 +35,40 @@ if(isset($_POST['update']))
               <div class="panel panel-default">
                 <div class="panel-body">
                   <form method="post" class="form-horizontal" enctype="multipart/form-data">
-                    <?php 
-                    if($error){
-                      ?>
+                    <?php
+                    if ($error) {
+                    ?>
                       <div class="errorWrap">
-                        <strong>ERROR</strong>:<?php echo htmlentities($error); ?> 
+                        <strong>ERROR</strong>:<?php echo htmlentities($error); ?>
                       </div>
-                      <?php
-                    } 
-                    else if($msg)
-                    {
-                      ?>
+                    <?php
+                    } else if ($msg) {
+                    ?>
                       <div class="succWrap">
-                        <strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> 
+                        <strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?>
                       </div>
-                      <?php
-                    }?>
+                    <?php
+                    } ?>
                     <div class="form-group">
                       <label class="col-sm-4 control-label">Current Image4</label>
-                      <?php 
-                      $id=intval($_GET['imgid']);
-                      $sql ="SELECT Vimage4 from tblvehicles where tblvehicles.id=:id";
-                      $query = $dbh -> prepare($sql);
-                      $query-> bindParam(':id', $id, PDO::PARAM_STR);
+                      <?php
+                      $id = intval($_GET['imgid']);
+                      $sql = "SELECT Vimage4 from tbltools where tbltools.id=:id";
+                      $query = $dbh->prepare($sql);
+                      $query->bindParam(':id', $id, PDO::PARAM_STR);
                       $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=1;
-                      if($query->rowCount() > 0)
-                      {
-                        foreach($results as $result)
-                        { 
-                          ?>
+                      $results = $query->fetchAll(PDO::FETCH_OBJ);
+                      $cnt = 1;
+                      if ($query->rowCount() > 0) {
+                        foreach ($results as $result) {
+                      ?>
 
                           <div class="col-sm-8">
-                            <img src="img/vehicleimages/<?php echo htmlentities($result->Vimage4);?>" width="300" height="200" style="border:solid 1px #000">
+                            <img src="img/vehicleimages/<?php echo htmlentities($result->Vimage4); ?>" width="300" height="200" style="border:solid 1px #000">
                           </div>
-                          <?php 
+                      <?php
                         }
-                      }?>
+                      } ?>
                     </div>
 
                     <div class="form-group">
@@ -100,15 +96,16 @@ if(isset($_POST['update']))
       </div>
     </div>
     <!-- content-wrapper ends -->
-    <?php @include("includes/footer.php");?>
+    <?php @include("includes/footer.php"); ?>
     <!-- partial -->
   </div>
   <!-- main-panel ends -->
-</div>
-<!-- page-body-wrapper ends -->
-</div>
-<!-- container-scroller -->
-<?php @include("includes/foot.php");?>
-<!-- End custom js for this page -->
+  </div>
+  <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <?php @include("includes/foot.php"); ?>
+  <!-- End custom js for this page -->
 </body>
+
 </html>

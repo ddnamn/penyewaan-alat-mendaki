@@ -1,28 +1,28 @@
 <?php
 include('includes/checklogin.php');
 check_login();
-if(isset($_REQUEST['del']))
-  {
-$delid=intval($_GET['del']);
-$sql = "delete from tblvehicles  WHERE  id=:delid";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':delid',$delid, PDO::PARAM_STR);
-$query -> execute();
- echo "<script>alert('car record deleted.');</script>";
+if (isset($_REQUEST['del'])) {
+  $delid = intval($_GET['del']);
+  $sql = "delete from tbltools  WHERE  id=:delid";
+  $query = $dbh->prepare($sql);
+  $query->bindParam(':delid', $delid, PDO::PARAM_STR);
+  $query->execute();
+  echo "<script>alert('Toolsrecord deleted.');</script>";
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php @include("includes/head.php");?>
+<?php @include("includes/head.php"); ?>
+
 <body>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
-    <?php @include("includes/header.php");?>
+    <?php @include("includes/header.php"); ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:../../partials/_sidebar.html -->
-      <?php @include("includes/sidebar.php");?>
+      <?php @include("includes/sidebar.php"); ?>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -32,7 +32,7 @@ $query -> execute();
                 <div class="modal-header">
                   <h5 class="modal-title" style="float: left;">Manage tools</h5>
                 </div>
-                
+
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush table-hover table-bordered" id="dataTableHover">
                     <thead>
@@ -48,32 +48,30 @@ $query -> execute();
                     </thead>
                     <tbody>
                       <?php
-                      $sql = "SELECT tblvehicles.VehiclesTitle,tblvehicles.Vimage1,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
-                      $query = $dbh -> prepare($sql);
+                      $sql = "SELECT tbltools.VehiclesTitle,tbltools.Vimage1,tblbrands.BrandName,tbltools.PricePerDay,tbltools.FuelType,tbltools.ModelYear,tbltools.id from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand";
+                      $query = $dbh->prepare($sql);
                       $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=1;
-                      if($query->rowCount() > 0)
-                      {
-                        foreach($results as $row)
-                        { 
-                          ?>
+                      $results = $query->fetchAll(PDO::FETCH_OBJ);
+                      $cnt = 1;
+                      if ($query->rowCount() > 0) {
+                        foreach ($results as $row) {
+                      ?>
                           <tr>
-                            <td class="text-center"><?php echo htmlentities($cnt);?></td>
+                            <td class="text-center"><?php echo htmlentities($cnt); ?></td>
                             <td>
-                              <img src="img/vehicleimages/<?php  echo $row->Vimage1;?>" class="mr-2" alt="image"><a href="#"class=" edit_data5" id="<?php echo  ($row->id); ?>" ><?php echo htmlentities($row->VehiclesTitle);?></a>
+                              <img src="img/vehicleimages/<?php echo $row->Vimage1; ?>" class="mr-2" alt="image"><a href="#" class=" edit_data5" id="<?php echo ($row->id); ?>"><?php echo htmlentities($row->VehiclesTitle); ?></a>
                             </td>
-                            <td class="text-center"><?php echo htmlentities($row->BrandName);?></td>
-                            <td class="text-center"><?php echo htmlentities($row->PricePerDay);?></td>
-                            <td><?php echo htmlentities($row->FuelType);?></td>
-                            <td><?php echo htmlentities($row->ModelYear);?></td>
+                            <td class="text-center"><?php echo htmlentities($row->BrandName); ?></td>
+                            <td class="text-center"><?php echo htmlentities($row->PricePerDay); ?></td>
+                            <td><?php echo htmlentities($row->FuelType); ?></td>
+                            <td><?php echo htmlentities($row->ModelYear); ?></td>
                             <td>
-                              <a href="edit_alat.php?id=<?php echo $row->id;?>" title="click to edit"><i class="mdi mdi-pencil-box-outline" aria-hidden="true"></i></a>
-                              <a href="manage_alat.php?del=<?php echo $row->id;?>" onclick="return confirm('Do you want to delete');"><i class="mdi mdi-delete"></i></i></a>
+                              <a href="edit_alat.php?id=<?php echo $row->id; ?>" title="click to edit"><i class="mdi mdi-pencil-box-outline" aria-hidden="true"></i></a>
+                              <a href="manage_alat.php?del=<?php echo $row->id; ?>" onclick="return confirm('Do you want to delete');"><i class="mdi mdi-delete"></i></i></a>
                             </td>
                           </tr>
-                          <?php 
-                          $cnt=$cnt+1;
+                      <?php
+                          $cnt = $cnt + 1;
                         }
                       } ?>
                     </tbody>
@@ -85,7 +83,7 @@ $query -> execute();
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
-        <?php @include("includes/footer.php");?>
+        <?php @include("includes/footer.php"); ?>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -93,8 +91,9 @@ $query -> execute();
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-  <?php @include("includes/foot.php");?>
+  <?php @include("includes/foot.php"); ?>
   <!-- End custom js for this page -->
- 
+
 </body>
+
 </html>
