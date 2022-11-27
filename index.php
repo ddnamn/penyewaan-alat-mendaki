@@ -64,7 +64,7 @@ error_reporting(0);
         </div>
 
         <div class="row">
-          <?php $sql = "SELECT tblTools.ToolsTitle,tblbrands.BrandName,tblTools.PricePerDay,tblTools.FuelType,tblTools.ModelYear,tblTools.id,tblTools.SeatingCapacity,tblTools.ToolsOverview,tblTools.Vimage1 from tblTools join tblbrands on tblbrands.id=tblTools.ToolsBrand order by rand() limit 9 ";
+          <?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand order by rand() limit 9 ";
           $query = $dbh->prepare($sql);
           $query->execute();
           $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -75,14 +75,14 @@ error_reporting(0);
               <div class="col-lg-4">
                 <div class="box wow  fadeInLeft">
                   <div class="car-info-box">
-                    <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" style="height: 180px; width: 280px;" class="img-responsive" alt="image">
+                    <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" style="height: 180px; width: 280px;" class="img-responsive" alt="image">
                     </a>
                     <div class="car-title-m">
-                      <h6><a href="rental_details.php?vhid=<?php echo htmlentities($result->id); ?>"> <?php echo substr($result->ToolsTitle, 0, 21); ?></a></h6>
+                      <h6><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"> <?php echo substr($result->VehiclesTitle, 0, 21); ?></a></h6>
                       <span class="price">Rp<?php echo htmlentities($result->PricePerDay); ?> /Day</span>
                     </div>
                     <div class="inventory_info_m ">
-                      <p><?php echo substr($result->ToolsOverview, 0, 70); ?></p>
+                      <p><?php echo substr($result->VehiclesOverview, 0, 70); ?></p>
                     </div>
                   </div>
                 </div>
@@ -105,18 +105,18 @@ error_reporting(0);
         </div>
 
         <!-- <div class="owl-carousel clients-carousel">
-          <img src="img/clients/client-1.png" alt="">
-          <img src="img/clients/client-2.png" alt="">
-          <img src="img/clients/client-3.png" alt="">
-          <img src="img/clients/client-4.png" alt="">
-          <img src="img/clients/client-5.png" alt="">
-          <img src="img/clients/client-6.png" alt="">
-        </div> -->
+            <img src="img/clients/client-1.png" alt="">
+            <img src="img/clients/client-2.png" alt="">
+            <img src="img/clients/client-3.png" alt="">
+            <img src="img/clients/client-4.png" alt="">
+            <img src="img/clients/client-5.png" alt="">
+            <img src="img/clients/client-6.png" alt="">
+          </div> -->
 
       </div>
     </section><!-- #clients -->
 
-    <!-- <section id="call-to-action" class="wow fadeInUp">
+    <section id="call-to-action" class="wow fadeInUp">
       <div class="container">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
@@ -129,9 +129,7 @@ error_reporting(0);
         </div>
 
       </div>
-    </section> -->
-
-    <!-- #call-to-action -->
+    </section><!-- #call-to-action -->
 
 
   </main>

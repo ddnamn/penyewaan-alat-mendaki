@@ -10624,7 +10624,7 @@ Version:1.0
     3.1. Banner
     3.2. Filter-Form
     3.3. About-Us-Section
-    3.4. Recently-Listed
+    3.4. Recently-Listed-Cars
     3.5. Fun-Facts
     3.6. Featured-Cars
     3.7. Trending-Cars
@@ -10670,7 +10670,7 @@ Version:1.0
   
   16. Profile-page
     16.1. Post-a-vehicle
-    16.2. my-Tools
+    16.2. my-vehicles
   
   17. Dealer-profile
   18. Dealers-list
@@ -11886,7 +11886,7 @@ nav.navbar {
 
 
 /*-----------------------------
-  3.4. Recently-Listed
+  3.4. Recently-Listed-Cars
   -----------------------------------*/
 
 .recent-tab {
@@ -13405,7 +13405,7 @@ form .slider.slider-horizontal {
     margin: 0px;
 }
 
-.sell_rental_quote {
+.sell_car_quote {
     background-attachment: scroll;
     background-clip: border-box;
     background-color: rgba(0, 0, 0, 0);
@@ -13417,7 +13417,7 @@ form .slider.slider-horizontal {
     padding: 50px 25px !important;
 }
 
-.sell_rental_quote .btn {
+.sell_car_quote .btn {
     margin-bottom: 15px;
 }
 
@@ -14909,15 +14909,15 @@ table.info-tabel tr td {
 
 
 /*--------------
-  16.2. my-Tools
+  16.2. my-vehicles
   -------------------------*/
 
-.my_Tools_list ul.vehicle_listing {
+.my_vehicles_list ul.vehicle_listing {
     padding: 0px;
     margin: 0 0 50px;
 }
 
-.my_Tools_list ul.vehicle_listing li {
+.my_vehicles_list ul.vehicle_listing li {
     list-style: none;
     border-bottom: #e6e6e6 solid 1px;
     padding: 14px 0 22px;
@@ -14935,7 +14935,7 @@ table.info-tabel tr td {
     max-width: 100%;
 }
 
-.my_Tools_list ul.vehicle_listing li a {
+.my_vehicles_list ul.vehicle_listing li a {
     color: #111;
 }
 
@@ -14971,7 +14971,7 @@ table.info-tabel tr td {
     border-bottom: #909090 solid 1px;
 }
 
-.my_Tools_list ul.vehicle_listing li .btn:hover {
+.my_vehicles_list ul.vehicle_listing li .btn:hover {
     color: #fff;
 }
 
@@ -16478,7 +16478,7 @@ table.info-tabel tr td {
     .btn {
         padding: 5px 22px;
     }
-    .sell_rental_quote .btn {
+    .sell_car_quote .btn {
         font-size: 14px;
         padding: 4px 15px;
     }
