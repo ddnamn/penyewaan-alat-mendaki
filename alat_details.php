@@ -132,31 +132,31 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="row">
           <div class="col-md-9">
-            <!-- <div class="main_features">
-                    <ul>
+            <div class="main_features">
+              <ul>
 
-                      <li> <i class="fa fa-calendar" aria-hidden="true"></i>
-                        <h5><?php echo htmlentities($result->ModelYear); ?></h5>
-                        <p>Reg.Year</p>
-                      </li>
-                      <li> <i class="fa fa-cogs" aria-hidden="true"></i>
-                        <h5><?php echo htmlentities($result->FuelType); ?></h5>
-                        <p>Fuel Type</p>
-                      </li>
+                <li> <i class="fa fa-calendar" aria-hidden="true"></i>
+                  <h5><?php echo htmlentities($result->ModelYear); ?></h5>
+                  <p>Reg.Year</p>
+                </li>
+                <li> <i class="fa fa-cogs" aria-hidden="true"></i>
+                  <h5><?php echo htmlentities($result->FuelType); ?></h5>
+                  <p>Fuel Type</p>
+                </li>
 
-                      <li> <i class="fa fa-user-plus" aria-hidden="true"></i>
-                        <h5><?php echo htmlentities($result->SeatingCapacity); ?></h5>
-                        <p>Seats</p>
-                      </li>
-                    </ul>
-                  </div> -->
+                <li> <i class="fa fa-user-plus" aria-hidden="true"></i>
+                  <h5><?php echo htmlentities($result->SeatingCapacity); ?></h5>
+                  <p>Seats</p>
+                </li>
+              </ul>
+            </div>
             <div class="listing_more_info">
               <div class="listing_detail_wrap">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs gray-bg" role="tablist">
                   <li role="presentation" class="active"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" style="background-color: #49a3ff;" data-toggle="tab">Deskripsi </a></li>
 
-                  <!-- <li role="presentation"><a href="#accessories" aria-controls="accessories" role="tab" data-toggle="tab">Accessories</a></li> -->
+                  <li role="presentation"><a href="#accessories" aria-controls="accessories" role="tab" data-toggle="tab">Accessories</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -359,7 +359,7 @@ if (isset($_POST['submit'])) {
         <div class="divider"></div>
 
         <!--Similar-Cars-->
-        <!-- <div class="similar_cars">
+        <div class="similar_cars">
           <h3>Similar Cars</h3>
           <div class="row">
             <?php
@@ -372,7 +372,7 @@ if (isset($_POST['submit'])) {
             $cnt = 1;
             if ($query->rowCount() > 0) {
               foreach ($results as $result) {
-            ?>      
+            ?>
                 <div class="col-md-3 grid_listing">
                   <div class="product-listing-m gray-bg">
                     <div class="product-listing-img"> <a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive" style="height: 200px; width: 360px;" alt="image" /> </a>
@@ -383,19 +383,19 @@ if (isset($_POST['submit'])) {
 
                       <ul class="features_list">
 
-                       <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?> seats</li>
-                       <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear); ?> model</li>
-                       <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType); ?></li>
-                     </ul>
-                   </div>
-                 </div>
-               </div>
-               <?php
+                        <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?> seats</li>
+                        <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear); ?> model</li>
+                        <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType); ?></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            <?php
               }
-            } ?>       
+            } ?>
 
-         </div>
-       </div> -->
+          </div>
+        </div>
         <!--/Similar-Cars-->
 
       </div>
