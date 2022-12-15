@@ -58,9 +58,9 @@ error_reporting(0);
                 <?php
                 //Query for Listing count
                 $searchdata = $_POST['searchdata'];
-                $sql = "SELECT tbltools.id from tbltools 
-            join tblbrands on tblbrands.id=tbltools.VehiclesBrand 
-            where tbltools.VehiclesTitle=:search || tbltools.FuelType=:search || tblbrands.BrandName=:search || tbltools.ModelYear=:search";
+                $sql = "SELECT tblitems.id from tblitems 
+            join tblbrands on tblbrands.id=tblitems.itemsBrand 
+            where tblitems.itemTitle=:search || tblitems.FuelType=:search || tblbrands.BrandName=:search || tblitems.ModelYear=:search";
                 $query = $dbh->prepare($sql);
                 $query->bindParam(':search', $searchdata, PDO::PARAM_STR);
                 $query->execute();
@@ -72,9 +72,9 @@ error_reporting(0);
             </div>
 
             <?php
-            $sql = "SELECT tbltools.*,tblbrands.BrandName,tblbrands.id as bid  from tbltools 
-        join tblbrands on tblbrands.id=tbltools.VehiclesBrand 
-        where tbltools.VehiclesTitle=:search || tbltools.FuelType=:search || tblbrands.BrandName=:search || tbltools.ModelYear=:search";
+            $sql = "SELECT tblitems.*,tblbrands.BrandName,tblbrands.id as bid  from tblitems 
+        join tblbrands on tblbrands.id=tblitems.itemsBrand 
+        where tblitems.itemTitle=:search || tblitems.FuelType=:search || tblbrands.BrandName=:search || tblitems.ModelYear=:search";
             $query = $dbh->prepare($sql);
             $query->bindParam(':search', $searchdata, PDO::PARAM_STR);
             $query->execute();
@@ -87,7 +87,7 @@ error_reporting(0);
                   <div class="product-listing-img"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive" alt="Image" style="width: 380px; height: 250px;" /> </a>
                   </div>
                   <div class="product-listing-content">
-                    <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></a></h5>
+                    <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h5>
                     <p class="list-price">$<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
                     <ul>
                       <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?> seats</li>
@@ -110,7 +110,7 @@ error_reporting(0);
               </div>
               <div class="recent_addedcars">
                 <ul>
-                  <?php $sql = "SELECT tbltools.*,tblbrands.BrandName,tblbrands.id as bid  from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand order by id desc limit 4";
+                  <?php $sql = "SELECT tblitems.*,tblbrands.BrandName,tblbrands.id as bid  from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand order by id desc limit 4";
                   $query = $dbh->prepare($sql);
                   $query->execute();
                   $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -121,7 +121,7 @@ error_reporting(0);
 
                       <li class="gray-bg">
                         <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" alt="image"></a> </div>
-                        <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></a>
+                        <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></a>
                           <p class="widget_price">$<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
                         </div>
                       </li>

@@ -64,7 +64,7 @@ error_reporting(0);
         </div>
 
         <div class="row">
-          <?php $sql = "SELECT tbltools.VehiclesTitle,tblbrands.BrandName,tbltools.PricePerDay,tbltools.FuelType,tbltools.ModelYear,tbltools.id,tbltools.SeatingCapacity,tbltools.VehiclesOverview,tbltools.Vimage1 from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand order by rand() limit 9 ";
+          <?php $sql = "SELECT tblitems.itemTitle,tblbrands.BrandName,tblitems.PricePerDay,tblitems.FuelType,tblitems.ModelYear,tblitems.id,tblitems.SeatingCapacity,tblitems.itemsOverview,tblitems.Vimage1 from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand order by rand() limit 9 ";
           $query = $dbh->prepare($sql);
           $query->execute();
           $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -78,11 +78,11 @@ error_reporting(0);
                     <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" style="height: 180px; width: 280px;" class="img-responsive" alt="image">
                     </a>
                     <div class="car-title-m">
-                      <h6><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"> <?php echo substr($result->VehiclesTitle, 0, 21); ?></a></h6>
+                      <h6><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"> <?php echo substr($result->itemTitle, 0, 21); ?></a></h6>
                       <span class="price">Rp<?php echo htmlentities($result->PricePerDay); ?> /Day</span>
                     </div>
                     <div class="inventory_info_m ">
-                      <p><?php echo substr($result->VehiclesOverview, 0, 70); ?></p>
+                      <p><?php echo substr($result->itemsOverview, 0, 70); ?></p>
                     </div>
                   </div>
                 </div>

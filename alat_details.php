@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
         </div>
         <?php
         $vhid = intval($_GET['vhid']);
-        $sql = "SELECT tbltools.*,tblbrands.BrandName,tblbrands.id as bid  from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand where tbltools.id=:vhid";
+        $sql = "SELECT tblitems.*,tblbrands.BrandName,tblbrands.id as bid  from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand where tblitems.id=:vhid";
         $query = $dbh->prepare($sql);
         $query->bindParam(':vhid', $vhid, PDO::PARAM_STR);
         $query->execute();
@@ -121,7 +121,7 @@ if (isset($_POST['submit'])) {
       <div class="container">
         <div class="listing_detail_head row">
           <div class="col-md-9">
-            <h2><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></h2>
+            <h2><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></h2>
           </div>
           <div class="col-md-3">
             <div class="price_info">
@@ -164,7 +164,7 @@ if (isset($_POST['submit'])) {
                   <!-- vehicle-overview -->
                   <div role="tabpanel" class="tab-pane active" id="vehicle-overview">
 
-                    <p><?php echo htmlentities($result->VehiclesOverview); ?></p>
+                    <p><?php echo htmlentities($result->itemsOverview); ?></p>
                   </div>
 
 
@@ -364,7 +364,7 @@ if (isset($_POST['submit'])) {
           <div class="row">
             <?php
             $bid = $_SESSION['brndid'];
-            $sql = "SELECT tbltools.VehiclesTitle,tblbrands.BrandName,tbltools.PricePerDay,tbltools.FuelType,tbltools.ModelYear,tbltools.id,tbltools.SeatingCapacity,tbltools.VehiclesOverview,tbltools.Vimage1 from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand where tbltools.VehiclesBrand=:bid";
+            $sql = "SELECT tblitems.itemTitle,tblbrands.BrandName,tblitems.PricePerDay,tblitems.FuelType,tblitems.ModelYear,tblitems.id,tblitems.SeatingCapacity,tblitems.itemsOverview,tblitems.Vimage1 from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand where tblitems.itemsBrand=:bid";
             $query = $dbh->prepare($sql);
             $query->bindParam(':bid', $bid, PDO::PARAM_STR);
             $query->execute();
@@ -378,7 +378,7 @@ if (isset($_POST['submit'])) {
                     <div class="product-listing-img"> <a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive" style="height: 200px; width: 360px;" alt="image" /> </a>
                     </div>
                     <div class="product-listing-content">
-                      <h5><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></a></h5>
+                      <h5><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h5>
                       <p class="list-price">$<?php echo htmlentities($result->PricePerDay); ?></p>
 
                       <ul class="features_list">

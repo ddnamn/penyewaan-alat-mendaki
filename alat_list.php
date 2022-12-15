@@ -59,7 +59,7 @@ error_reporting(0);
                 <div class="sorting-count">
                   <?php
                   //Query for Listing count
-                  $sql = "SELECT id from tbltools";
+                  $sql = "SELECT id from tblitems";
                   $query = $dbh->prepare($sql);
                   $query->bindParam(':vhid', $vhid, PDO::PARAM_STR);
                   $query->execute();
@@ -70,7 +70,7 @@ error_reporting(0);
                 </div>
               </div>
 
-              <?php $sql = "SELECT tbltools.*,tblbrands.BrandName,tblbrands.id as bid  from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand order by rand() ";
+              <?php $sql = "SELECT tblitems.*,tblbrands.BrandName,tblbrands.id as bid  from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand order by rand() ";
               $query = $dbh->prepare($sql);
               $query->execute();
               $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -82,7 +82,7 @@ error_reporting(0);
                     <div class="product-listing-img"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive" alt="Image" style="height: 150px; width:300px;" /> </a>
                     </div>
                     <div class="product-listing-content">
-                      <h5><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></a></h5>
+                      <h5><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h5>
                       <p class="list-price">Rp<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
                       <ul>
                         <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?> capacity</li>
@@ -105,7 +105,7 @@ error_reporting(0);
                 </div>
                 <div class="recent_addedcars">
                   <ul>
-                    <?php $sql = "SELECT tbltools.*,tblbrands.BrandName,tblbrands.id as bid  from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand order by id desc limit 4";
+                    <?php $sql = "SELECT tblitems.*,tblbrands.BrandName,tblbrands.id as bid  from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand order by id desc limit 4";
                     $query = $dbh->prepare($sql);
                     $query->execute();
                     $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -116,7 +116,7 @@ error_reporting(0);
 
                         <li class="gray-bg">
                           <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" alt="image"></a> </div>
-                          <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></a>
+                          <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></a>
                             <p class="widget_price">Rp<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
                           </div>
                         </li>

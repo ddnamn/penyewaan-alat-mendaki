@@ -6,7 +6,7 @@ if (isset($_POST['update'])) {
   $vimage1 = $_FILES["img1"]["name"];
   $id = intval($_GET['imgid']);
   move_uploaded_file($_FILES["img1"]["tmp_name"], "img/vehicleimages/" . $_FILES["img1"]["name"]);
-  $sql = "update tbltools set Vimage1=:vimage1 where id=:id";
+  $sql = "update tblitems set Vimage1=:vimage1 where id=:id";
   $query = $dbh->prepare($sql);
   $query->bindParam(':vimage1', $vimage1, PDO::PARAM_STR);
   $query->bindParam(':id', $id, PDO::PARAM_STR);
@@ -45,7 +45,7 @@ if (isset($_POST['update'])) {
                       <label class="col-sm-4 control-label">Current Image1</label>
                       <?php
                       $id = intval($_GET['imgid']);
-                      $sql = "SELECT Vimage1 from tbltools where tbltools.id=:id";
+                      $sql = "SELECT Vimage1 from tblitems where tblitems.id=:id";
                       $query = $dbh->prepare($sql);
                       $query->bindParam(':id', $id, PDO::PARAM_STR);
                       $query->execute();

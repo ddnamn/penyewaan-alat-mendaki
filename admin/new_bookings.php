@@ -3,7 +3,7 @@ include('includes/checklogin.php');
 check_login();
 if (isset($_REQUEST['del'])) {
   $delid = intval($_GET['del']);
-  $sql = "delete from tbltools  WHERE  id=:delid";
+  $sql = "delete from tblitems  WHERE  id=:delid";
   $query = $dbh->prepare($sql);
   $query->bindParam(':delid', $delid, PDO::PARAM_STR);
   $query->execute();
@@ -51,7 +51,7 @@ if (isset($_REQUEST['del'])) {
                     <tbody>
                       <?php
                       $status = 0;
-                      $sql = "SELECT tblusers.FullName,tblbrands.BrandName,tbltools.VehiclesTitle,tbltools.Vimage1,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber  from tblbooking join tbltools on tbltools.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tbltools.VehiclesBrand=tblbrands.id where tblbooking.Status=:status";
+                      $sql = "SELECT tblusers.FullName,tblbrands.BrandName,tblitems.itemTitle,tblitems.Vimage1,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber  from tblbooking join tblitems on tblitems.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tblitems.itemsBrand=tblbrands.id where tblbooking.Status=:status";
                       $query = $dbh->prepare($sql);
                       $query->bindParam(':status', $status, PDO::PARAM_STR);
                       $query->execute();
@@ -65,7 +65,7 @@ if (isset($_REQUEST['del'])) {
                             <td><?php echo htmlentities($result->FullName); ?></td>
                             <td><?php echo htmlentities($result->BookingNumber); ?></td>
                             <td>
-                              <a href="edit_car.php?id=<?php echo htmlentities($result->vid); ?>"><?php echo htmlentities($result->VehiclesTitle); ?></a>
+                              <a href="edit_car.php?id=<?php echo htmlentities($result->vid); ?>"><?php echo htmlentities($result->itemTitle); ?></a>
                             </td>
                             <td><?php echo htmlentities($result->FromDate); ?></td>
                             <td><?php echo htmlentities($result->ToDate); ?> </td>

@@ -55,9 +55,9 @@ if (isset($_REQUEST['aeid'])) {
                     <tbody>
                       <?php
                       $bid = intval($_GET['bid']);
-                      $sql = "SELECT tblusers.*,tblbrands.BrandName,tbltools.VehiclesTitle,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber,
-                    DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totalnodays,tbltools.PricePerDay
-                    from tblbooking join tbltools on tbltools.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tbltools.VehiclesBrand=tblbrands.id where tblbooking.id=:bid";
+                      $sql = "SELECT tblusers.*,tblbrands.BrandName,tblitems.itemTitle,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber,
+                    DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totalnodays,tblitems.PricePerDay
+                    from tblbooking join tblitems on tblitems.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tblitems.itemsBrand=tblbrands.id where tblbooking.id=:bid";
                       $query = $dbh->prepare($sql);
                       $query->bindParam(':bid', $bid, PDO::PARAM_STR);
                       $query->execute();
@@ -99,7 +99,7 @@ if (isset($_REQUEST['aeid'])) {
                           </tr>
                           <tr>
                             <th>Vehicle Name</th>
-                            <td><a href="edit_car.php?id=<?php echo htmlentities($result->vid); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></td>
+                            <td><a href="edit_car.php?id=<?php echo htmlentities($result->vid); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></td>
                             <th>Booking Date</th>
                             <td><?php echo htmlentities($result->PostingDate); ?>
                             </td>

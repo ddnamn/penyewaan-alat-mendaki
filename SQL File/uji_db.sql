@@ -249,14 +249,14 @@ INSERT INTO `tblusers` (`id`, `FullName`, `EmailId`, `Password`, `ContactNo`, `d
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblvehicles`
+-- Table structure for table `tblitems`
 --
 
-CREATE TABLE `tblvehicles` (
+CREATE TABLE `tblitems` (
   `id` int(11) NOT NULL,
-  `VehiclesTitle` varchar(150) DEFAULT NULL,
-  `VehiclesBrand` int(11) DEFAULT NULL,
-  `VehiclesOverview` longtext DEFAULT NULL,
+  `itemTitle` varchar(150) DEFAULT NULL,
+  `itemsBrand` int(11) DEFAULT NULL,
+  `itemsOverview` longtext DEFAULT NULL,
   `PricePerDay` int(11) DEFAULT NULL,
   `FuelType` varchar(100) DEFAULT NULL,
   `ModelYear` int(6) DEFAULT NULL,
@@ -283,10 +283,10 @@ CREATE TABLE `tblvehicles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblvehicles`
+-- Dumping data for table `tblitems`
 --
 
-INSERT INTO `tblvehicles` (`id`, `VehiclesTitle`, `VehiclesBrand`, `VehiclesOverview`, `PricePerDay`, `FuelType`, `ModelYear`, `SeatingCapacity`, `Vimage1`, `Vimage2`, `Vimage3`, `Vimage4`, `Vimage5`, `AirConditioner`, `PowerDoorLocks`, `AntiLockBrakingSystem`, `BrakeAssist`, `PowerSteering`, `DriverAirbag`, `PassengerAirbag`, `PowerWindows`, `CDPlayer`, `CentralLocking`, `CrashSensor`, `LeatherSeats`, `RegDate`, `UpdationDate`) VALUES
+INSERT INTO `tblitems` (`id`, `itemTitle`, `itemsBrand`, `itemsOverview`, `PricePerDay`, `FuelType`, `ModelYear`, `SeatingCapacity`, `Vimage1`, `Vimage2`, `Vimage3`, `Vimage4`, `Vimage5`, `AirConditioner`, `PowerDoorLocks`, `AntiLockBrakingSystem`, `BrakeAssist`, `PowerSteering`, `DriverAirbag`, `PassengerAirbag`, `PowerWindows`, `CDPlayer`, `CentralLocking`, `CrashSensor`, `LeatherSeats`, `RegDate`, `UpdationDate`) VALUES
 (1, 'Barang1', 1, 'Maruti Wagon R Latest Updates\r\n\r\nMaruti Suzuki has launched the BS6 Wagon R S-CNG in India. The LXI CNG and LXI (O) CNG variants now cost Rs 5.25 lakh and Rs 5.32 lakh respectively, up by Rs 19,000. Maruti claims a fuel economy of 32.52km per kg. The CNG Wagon R’s continuation in the BS6 era is part of the carmaker’s ‘Mission Green Million’ initiative announced at Auto Expo 2020.\r\n\r\nPreviously, the carmaker had updated the 1.0-litre powertrain to meet BS6 emission norms. It develops 68PS of power and 90Nm of torque, same as the BS4 unit. However, the updated motor now returns 21.79 kmpl, which is a little less than the BS4 unit’s 22.5kmpl claimed figure. Barring the CNG variants, the prices of the Wagon R 1.0-litre have been hiked by Rs 8,000.', 500, 'Petrol', 2019, 5, 'kariel2.png', 'maruti1.jpg', 'maruti3.jpg', 'steering-close-up-1288209207_930x620.jpg', 'boot-with-standard-luggage-202327489_930x620.jpg', 1, NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 07:04:35', '2021-07-23 20:08:26'),
 (2, 'Barang2', 2, 'BMW 5 Series price starts at ? 55.4 Lakh and goes upto ? 68.39 Lakh. The price of Petrol version for 5 Series ranges between ? 55.4 Lakh - ? 60.89 Lakh and the price of Diesel version for 5 Series ranges between ? 60.89 Lakh - ? 68.39 Lakh.', 1000, 'Petrol', 2018, 5, 'kariel3.png', 'bmw2.jpg', 'bmw5.jpg', 'bmw6.jpg', 'bmw7.jpg', 1, 1, 1, 1, 1, 1, 1, 1, NULL, 1, 1, 1, '2020-07-07 07:12:02', '2021-07-23 19:42:22'),
 (3, 'Barang3', 3, 'As per ARAI, the mileage of Q8 is 0 kmpl. Real mileage of the vehicle varies depending upon the driving habits. City and highway mileage figures also vary depending upon the road conditions.', 3000, 'Petrol', 2017, 5, 'image3.png', '1920x1080_MTC_XL_framed_Audi-Odessa-Armaturen_Spiegelung_CC_v05.jpg', 'audi1.jpg', '1audiq8.jpg', 'audi-q8-front-view4.jpeg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 07:19:21', '2020-07-07 07:28:02'),
@@ -350,9 +350,9 @@ ALTER TABLE `tblusers`
   ADD KEY `EmailId` (`EmailId`);
 
 --
--- Indexes for table `tblvehicles`
+-- Indexes for table `tblitems`
 --
-ALTER TABLE `tblvehicles`
+ALTER TABLE `tblitems`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -408,9 +408,9 @@ ALTER TABLE `tblusers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tblvehicles`
+-- AUTO_INCREMENT for table `tblitems`
 --
-ALTER TABLE `tblvehicles`
+ALTER TABLE `tblitems`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 

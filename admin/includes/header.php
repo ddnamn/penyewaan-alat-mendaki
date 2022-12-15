@@ -105,7 +105,7 @@
            <h6 class="p-3 mb-0">You have <?php echo htmlentities($totalnewbooking); ?> new notification</h6>
            <div class="dropdown-divider"></div>
            <?php
-            $sql = "SELECT tblbooking.userEmail,tbltools.VehiclesTitle from tblbooking join tbltools on tblbooking.VehicleId=tbltools.id  where tblbooking.Status='0' ORDER BY tblbooking.id DESC LIMIT 3";
+            $sql = "SELECT tblbooking.userEmail,tblitems.itemTitle from tblbooking join tblitems on tblbooking.VehicleId=tblitems.id  where tblbooking.Status='0' ORDER BY tblbooking.id DESC LIMIT 3";
             $query = $dbh->prepare($sql);
             $query->execute();
             $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -124,7 +124,7 @@
                  </div>
 
                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                   <h6 class="preview-subject font-weight-normal mb-1"><?php echo substr($row->VehiclesTitle, 0, 50); ?></h6>
+                   <h6 class="preview-subject font-weight-normal mb-1"><?php echo substr($row->itemTitle, 0, 50); ?></h6>
                    <p class="text-gray ellipsis mb-0">is booked</p>
                  </div>
                </a>

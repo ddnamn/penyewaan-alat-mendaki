@@ -43,7 +43,7 @@ check_login();
                   <h4 class="font-weight-normal mb-3">Listed Vehicles
                   </h4>
                   <?php
-                  $sql1 = "SELECT id from tbltools ";
+                  $sql1 = "SELECT id from tblitems ";
                   $query1 = $dbh->prepare($sql1);;
                   $query1->execute();
                   $results1 = $query1->fetchAll(PDO::FETCH_OBJ);

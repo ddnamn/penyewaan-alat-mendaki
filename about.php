@@ -55,9 +55,8 @@ error_reporting(0);
           </div>
 
           <div class="col-lg-6 content">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ullam officia similique. Similique molestiae esse id nesciunt ea aut deleniti mollitia odio laborum quibusdam, aliquam, perferendis ex eaque atque alias!</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, consectetur sunt eligendi doloremque porro vero unde ab esse voluptatem pariatur placeat sed veritatis voluptatibus recusandae ut deserunt laborum similique nobis?</p>
+            <h2>lets explore to get experience</h2>
+            <h3> website dimana kalian dapat menemukan kebutuhan alat untuk melakukan pendakian tanpa harus membeli </h3>
           </div>
         </div>
 

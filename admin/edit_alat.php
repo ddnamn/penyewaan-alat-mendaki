@@ -24,7 +24,7 @@ if (isset($_POST['save'])) {
   $leatherseats = $_POST['leatherseats'];
   $id = intval($_GET['id']);
 
-  $sql = "update tbltools set VehiclesTitle=:vehicletitle,VehiclesBrand=:brand,VehiclesOverview=:vehicleoverview,PricePerDay=:priceperday,FuelType=:fueltype,ModelYear=:modelyear,SeatingCapacity=:seatingcapacity,AirConditioner=:airconditioner,PowerDoorLocks=:powerdoorlocks,AntiLockBrakingSystem=:antilockbrakingsys,BrakeAssist=:brakeassist,PowerSteering=:powersteering,DriverAirbag=:driverairbag,PassengerAirbag=:passengerairbag,PowerWindows=:powerwindow,CDPlayer=:cdplayer,CentralLocking=:centrallocking,CrashSensor=:crashcensor,LeatherSeats=:leatherseats where id=:id ";
+  $sql = "update tblitems set itemTitle=:vehicletitle,itemsBrand=:brand,itemsOverview=:vehicleoverview,PricePerDay=:priceperday,FuelType=:fueltype,ModelYear=:modelyear,SeatingCapacity=:seatingcapacity,AirConditioner=:airconditioner,PowerDoorLocks=:powerdoorlocks,AntiLockBrakingSystem=:antilockbrakingsys,BrakeAssist=:brakeassist,PowerSteering=:powersteering,DriverAirbag=:driverairbag,PassengerAirbag=:passengerairbag,PowerWindows=:powerwindow,CDPlayer=:cdplayer,CentralLocking=:centrallocking,CrashSensor=:crashcensor,LeatherSeats=:leatherseats where id=:id ";
   $query = $dbh->prepare($sql);
   $query->bindParam(':vehicletitle', $vehicletitle, PDO::PARAM_STR);
   $query->bindParam(':brand', $brand, PDO::PARAM_STR);
@@ -81,7 +81,7 @@ if (isset($_POST['save'])) {
               } ?>
               <?php
               $id = intval($_GET['id']);
-              $sql = "SELECT tbltools.*,tblbrands.BrandName,tblbrands.id as bid from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand where tbltools.id=:id";
+              $sql = "SELECT tblitems.*,tblbrands.BrandName,tblbrands.id as bid from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand where tblitems.id=:id";
               $query = $dbh->prepare($sql);
               $query->bindParam(':id', $id, PDO::PARAM_STR);
               $query->execute();
@@ -112,14 +112,14 @@ if (isset($_POST['save'])) {
                       </div>
                       <div class="form-group col-md-6">
                         <label for="exampleInputName1">ToolsTitle<span style="color:red">*</span></label>
-                        <input type="text" name="car" class="form-control" value="<?php echo htmlentities($result->VehiclesTitle) ?>" id="product" required>
+                        <input type="text" name="car" class="form-control" value="<?php echo htmlentities($result->itemTitle) ?>" id="product" required>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-md-12">
                         <label for="exampleInputName1">ToolsDescription<span style="color:red">*</label>
                         <textarea class="form-control" style=" font-family: fontawesome;
-                         font-size: 17px; line-height: 25px;" name="description" rows="6" required><?php echo htmlentities($result->VehiclesOverview); ?></textarea>
+                         font-size: 17px; line-height: 25px;" name="description" rows="6" required><?php echo htmlentities($result->itemsOverview); ?></textarea>
                       </div>
                     </div>
                     <div class="row">
@@ -139,8 +139,8 @@ if (isset($_POST['save'])) {
                         <label for="exampleInputName1">Select Fuel Type<span style="color:red">*</label>
                         <select class="form-control" name="fueltype" required>
                           <option value="<?php echo htmlentities($result->FuelType); ?>"> <?php echo htmlentities($result->FuelType); ?> </option>
-                          <option value="Petrol">Petrol</option>
-                          <option value="Diesel">Diesel</option>
+                          <!-- <option value="Petrol">Petrol</option> -->
+                          <!-- <option value="Diesel">Diesel</option> -->
                           <option value="CNG">CNG</option>
                         </select>
                       </div>

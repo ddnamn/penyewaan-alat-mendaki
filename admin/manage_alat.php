@@ -3,7 +3,7 @@ include('includes/checklogin.php');
 check_login();
 if (isset($_REQUEST['del'])) {
   $delid = intval($_GET['del']);
-  $sql = "delete from tbltools  WHERE  id=:delid";
+  $sql = "delete from tblitems  WHERE  id=:delid";
   $query = $dbh->prepare($sql);
   $query->bindParam(':delid', $delid, PDO::PARAM_STR);
   $query->execute();
@@ -48,7 +48,7 @@ if (isset($_REQUEST['del'])) {
                     </thead>
                     <tbody>
                       <?php
-                      $sql = "SELECT tbltools.VehiclesTitle,tbltools.Vimage1,tblbrands.BrandName,tbltools.PricePerDay,tbltools.FuelType,tbltools.ModelYear,tbltools.id from tbltools join tblbrands on tblbrands.id=tbltools.VehiclesBrand";
+                      $sql = "SELECT tblitems.itemTitle,tblitems.Vimage1,tblbrands.BrandName,tblitems.PricePerDay,tblitems.FuelType,tblitems.ModelYear,tblitems.id from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand";
                       $query = $dbh->prepare($sql);
                       $query->execute();
                       $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -59,7 +59,7 @@ if (isset($_REQUEST['del'])) {
                           <tr>
                             <td class="text-center"><?php echo htmlentities($cnt); ?></td>
                             <td>
-                              <img src="img/vehicleimages/<?php echo $row->Vimage1; ?>" class="mr-2" alt="image"><a href="#" class=" edit_data5" id="<?php echo ($row->id); ?>"><?php echo htmlentities($row->VehiclesTitle); ?></a>
+                              <img src="img/vehicleimages/<?php echo $row->Vimage1; ?>" class="mr-2" alt="image"><a href="#" class=" edit_data5" id="<?php echo ($row->id); ?>"><?php echo htmlentities($row->itemTitle); ?></a>
                             </td>
                             <td class="text-center"><?php echo htmlentities($row->BrandName); ?></td>
                             <td class="text-center"><?php echo htmlentities($row->PricePerDay); ?></td>

@@ -32,7 +32,7 @@ if (isset($_POST['save'])) {
   move_uploaded_file($_FILES["img4"]["tmp_name"], "img/vehicleimages/" . $_FILES["img4"]["name"]);
   move_uploaded_file($_FILES["img5"]["tmp_name"], "img/vehicleimages/" . $_FILES["img5"]["name"]);
 
-  $sql = "INSERT INTO tbltools(VehiclesTitle,VehiclesBrand,VehiclesOverview,PricePerDay,FuelType,ModelYear,SeatingCapacity,Vimage1,Vimage2,Vimage3,Vimage4,Vimage5,AirConditioner,PowerDoorLocks,AntiLockBrakingSystem,BrakeAssist,PowerSteering,DriverAirbag,PassengerAirbag,PowerWindows,CDPlayer,CentralLocking,CrashSensor,LeatherSeats) VALUES(:vehicletitle,:brand,:vehicleoverview,:priceperday,:fueltype,:modelyear,:seatingcapacity,:vimage1,:vimage2,:vimage3,:vimage4,:vimage5,:airconditioner,:powerdoorlocks,:antilockbrakingsys,:brakeassist,:powersteering,:driverairbag,:passengerairbag,:powerwindow,:cdplayer,:centrallocking,:crashcensor,:leatherseats)";
+  $sql = "INSERT INTO tblitems(itemTitle,itemsBrand,itemsOverview,PricePerDay,FuelType,ModelYear,SeatingCapacity,Vimage1,Vimage2,Vimage3,Vimage4,Vimage5,AirConditioner,PowerDoorLocks,AntiLockBrakingSystem,BrakeAssist,PowerSteering,DriverAirbag,PassengerAirbag,PowerWindows,CDPlayer,CentralLocking,CrashSensor,LeatherSeats) VALUES(:vehicletitle,:brand,:vehicleoverview,:priceperday,:fueltype,:modelyear,:seatingcapacity,:vimage1,:vimage2,:vimage3,:vimage4,:vimage5,:airconditioner,:powerdoorlocks,:antilockbrakingsys,:brakeassist,:powersteering,:driverairbag,:passengerairbag,:powerwindow,:cdplayer,:centrallocking,:crashcensor,:leatherseats)";
   $query = $dbh->prepare($sql);
   $query->bindParam(':vehicletitle', $vehicletitle, PDO::PARAM_STR);
   $query->bindParam(':brand', $brand, PDO::PARAM_STR);
@@ -136,8 +136,8 @@ if (isset($_POST['save'])) {
                     <label for="exampleInputName1">Select Fuel Type<span style="color:red">*</label>
                     <select class="form-control" name="fueltype" required>
                       <option value=""> Select </option>
-                      <option value="Petrol">Petrol</option>
-                      <option value="Diesel">Diesel</option>
+                      <!-- <option value="Petrol">Petrol</option> -->
+                      <!-- <option value="Diesel">Diesel</option> -->
                       <option value="CNG">CNG</option>
                     </select>
                   </div>
