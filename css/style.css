@@ -42,6 +42,18 @@
     box-sizing: border-box;
 }
 
+.tombollogin {
+    background-color: #000a68;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -10299,6 +10311,8 @@ p.help-block li {
 
 /* Call To Action Section
 --------------------------------*/
+
+
 /* 
 #call-to-action {
     background: #278bf2;
@@ -10344,6 +10358,7 @@ p.help-block li {
     color: #00a3d1;
 }
  */
+
 
 /* Our Team Section
 --------------------------------*/
@@ -11849,7 +11864,7 @@ nav.navbar {
   3.3. About-Us-Section
   -------------------------------*/
 
-.looking-Tools{
+.looking-Tools {
     border: 3px solid #e1e1e1;
     border-radius: 0 30px;
     padding: 58px 25px;
@@ -15758,7 +15773,7 @@ table.info-tabel tr td {
     .banner_content {
         padding-left: 0;
     }
-    .looking-Tools{
+    .looking-Tools {
         padding: 30px;
         width: auto;
         margin: 0 auto 40px;
@@ -16241,7 +16256,7 @@ table.info-tabel tr td {
     .banner-section {
         padding: 100px 0;
     }
-    .looking-Tools{
+    .looking-Tools {
         padding: 30px;
         width: auto;
     }

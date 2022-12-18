@@ -45,8 +45,18 @@ error_reporting(0);
         <div>
           <h1>Jumbotron Example</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>
+          <div class="tombol">
+          <div>
+            <?php   if(strlen($_SESSION['login'])==0)
+            { 
+              ?>
+              <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="tombollogin" >Login / Register</a> 
+              <?php 
+            }?>
+         </div>
+       </div>
         </div>
-
+        
         <img src="img/jumbotron.png" class="img-fluid w-50 d-none d-sm-block">
       </div>
     </div>

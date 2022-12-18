@@ -27,7 +27,7 @@
         <li><a href="portfolio.php">Gallery</a></li>
         <li><a href="about.php">About Us</a></li>
         <li><a href="contact.php">Contact</a></li>
-        <li><a href="admin">Sign In</a></li>
+        <!-- <li><a href="admin">Sign In</a></li> -->
         <?php if (strlen($_SESSION['login']) != 0) {
         ?>
           <?php
