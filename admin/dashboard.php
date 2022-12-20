@@ -40,7 +40,7 @@ check_login();
               <div class="card bg-gradient-success card-img-holder text-white" style="height: 140px;">
                 <div class="card-body">
                   <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                  <h4 class="font-weight-normal mb-3">Listed Vehicles
+                  <h4 class="font-weight-normal mb-3">Listed Tools
                   </h4>
                   <?php
                   $sql1 = "SELECT id from tblitems ";
@@ -74,10 +74,10 @@ check_login();
               <div class="card bg-gradient-success card-img-holder text-white" style="height: 140px;">
                 <div class="card-body">
                   <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                  <h4 class="font-weight-normal mb-3">Total Brands
+                  <h4 class="font-weight-normal mb-3">Total Tools Type 
                   </h4>
                   <?php
-                  $sql3 = "SELECT id from tblbrands ";
+                  $sql3 = "SELECT id from tbltype ";
                   $query3 = $dbh->prepare($sql3);
                   $query3->execute();
                   $results3 = $query3->fetchAll(PDO::FETCH_OBJ);

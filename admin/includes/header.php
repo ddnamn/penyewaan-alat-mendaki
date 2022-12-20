@@ -8,14 +8,14 @@
       $cnt = 1;
       if ($query->rowCount() > 0) {
         foreach ($results as $row) {
-          if ($row->companylogo == "avatar15.jpg") {
+          if ($row->companylogo == "avatar0.jpg") {
       ?>
-           <a class="navbar-brand brand-logo " href="dashboard.php"><img class="img-avatar" style="height: 60px; width: 60px;" src="assets/img/avatars/avatar15.jpg" alt=""></a>
-           <a class="navbar-brand brand-logo-mini" href="dashboard.php"><img style="height: 30px; width: 30px;" src="assets/img/avatars/avatar15.jpg" alt="logo" /></a>
+           <a class="navbar-brand brand-logo " href="dashboard.php"><img class="img-avatar" style="height: 60px; width: 60px;" src="assets/img/avatars/avatar0.jpg" alt=""></a>
+           <a class="navbar-brand brand-logo-mini" href="dashboard.php"><img style="height: 30px; width: 30px;" src="assets/img/avatars/avatar0.jpg" alt="logo" /></a>
          <?php
           } else { ?>
-           <a class="navbar-brand brand-logo " href="dashboard.php"><img class="img-avatar" style="height: 60px; width: 60px;" src="companyimages/<?php echo $row->companylogo; ?>" alt=""></a>
-           <a class="navbar-brand brand-logo-mini" href="dashboard.php"><img style="height: 30px; width: 30px;" src="companyimages/<?php echo $row->companylogo; ?>" alt="logo" /></a>
+           <a class="navbar-brand brand-logo " href="dashboard.php"><img class="img-avatar" style="height: 60px; width: 60px;" src="companyimages/logomount.jpg" alt=""></a>
+           <a class="navbar-brand brand-logo-mini" href="dashboard.php"><img style="height: 30px; width: 30px;" src="companyimages/logomount.jpg" alt="logo" /></a>
          <?php
           } ?>
      <?php

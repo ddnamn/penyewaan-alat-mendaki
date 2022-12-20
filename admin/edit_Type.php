@@ -5,11 +5,11 @@ include('includes/dbconnection.php');
 if(isset($_POST['insert']))
 {
     $eib= $_SESSION['editbid'];
-    $brand=$_POST['brand'];
+    $type=$_POST['type'];
     $update=date('Y/m/d');
-    $sql4="update tblbrands set BrandName=:brand,UpdationDate=:update where id=:eib";
+    $sql4="update tbltype set TypeName=:type,UpdationDate=:update where id=:eib";
     $query=$dbh->prepare($sql4);
-    $query->bindParam(':brand',$brand,PDO::PARAM_STR);
+    $query->bindParam(':type',$type,PDO::PARAM_STR);
     $query->bindParam(':update',$update,PDO::PARAM_STR);
     $query->bindParam(':eib',$eib,PDO::PARAM_STR);
     $query->execute();
@@ -24,7 +24,7 @@ if(isset($_POST['insert']))
 <div class="card-body">
     <?php
     $eid=$_POST['edit_id4'];
-    $sql2="SELECT * from tblbrands  where tblbrands.id=:eid";
+    $sql2="SELECT * from tbltype  where tbltype.id=:eid";
     $query2 = $dbh -> prepare($sql2);
     $query2-> bindParam(':eid', $eid, PDO::PARAM_STR);
     $query2->execute();
@@ -38,9 +38,9 @@ if(isset($_POST['insert']))
             <form class="form-sample"  method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <label class="col-sm-12 pl-0 pr-0">Brand Name</label>
+                        <label class="col-sm-12 pl-0 pr-0">Type Name</label>
                         <div class="col-sm-12 pl-0 pr-0">
-                            <input type="text" name="brand" id="brand" class="form-control" value="<?php  echo $row->BrandName;?>" required />
+                            <input type="text" name="type" id="type" class="form-control" value="<?php  echo $row->TypeName;?>" required />
                         </div>
                     </div>
                 </div>

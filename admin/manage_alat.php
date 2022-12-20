@@ -41,14 +41,12 @@ if (isset($_REQUEST['del'])) {
                         <th>Vehicle Title</th>
                         <th>Brand </th>
                         <th>Price Per day</th>
-                        <th>Fuel Type</th>
-                        <th>Model Year</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
-                      $sql = "SELECT tblitems.itemTitle,tblitems.Vimage1,tblbrands.BrandName,tblitems.PricePerDay,tblitems.FuelType,tblitems.ModelYear,tblitems.id from tblitems join tblbrands on tblbrands.id=tblitems.itemsBrand";
+                      $sql = "SELECT tblitems.itemTitle,tblitems.Vimage1,tbltype.TypeName,tblitems.PricePerDay,tblitems.id from tblitems join tbltype on tbltype.id=tblitems.itemsBrand";
                       $query = $dbh->prepare($sql);
                       $query->execute();
                       $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -61,10 +59,8 @@ if (isset($_REQUEST['del'])) {
                             <td>
                               <img src="img/vehicleimages/<?php echo $row->Vimage1; ?>" class="mr-2" alt="image"><a href="#" class=" edit_data5" id="<?php echo ($row->id); ?>"><?php echo htmlentities($row->itemTitle); ?></a>
                             </td>
-                            <td class="text-center"><?php echo htmlentities($row->BrandName); ?></td>
-                            <td class="text-center"><?php echo htmlentities($row->PricePerDay); ?></td>
-                            <td><?php echo htmlentities($row->FuelType); ?></td>
-                            <td><?php echo htmlentities($row->ModelYear); ?></td>
+                            <td class=""><?php echo htmlentities($row->TypeName); ?></td>
+                            <td class=""><?php echo htmlentities($row->PricePerDay); ?></td>
                             <td>
                               <a href="edit_alat.php?id=<?php echo $row->id; ?>" title="click to edit"><i class="mdi mdi-pencil-box-outline" aria-hidden="true"></i></a>
                               <a href="manage_alat.php?del=<?php echo $row->id; ?>" onclick="return confirm('Do you want to delete');"><i class="mdi mdi-delete"></i></i></a>

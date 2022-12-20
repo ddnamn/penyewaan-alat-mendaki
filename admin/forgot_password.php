@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo " align="center" >
-                  <img class="img-avatar mb-3" src="img/vehicleimages/dealer-logo.jpg" alt=""> <br>
+                  <img class="img-avatar mb-3" src="" alt=""> <br>
                   <h4>Don’t worry, we’ve got you back</h4>
                 </div>
                 <h6 class="font-weight-light">Please enter below detail</h6>

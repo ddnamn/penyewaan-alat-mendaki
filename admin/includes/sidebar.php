@@ -55,13 +55,13 @@
          </li>
          <li class="nav-item">
              <a class="nav-link" data-toggle="collapse" href="#brand" aria-expanded="false" aria-controls="ui-basic">
-                 <span class="menu-title">Brand management</span>
+                 <span class="menu-title">Tools Type </span>
                  <i class="menu-arrow"></i>
                  <i class="mdi mdi-archive menu-icon"></i>
              </a>
              <div class="collapse" id="brand">
                  <ul class="nav flex-column sub-menu">
-                     <li class="nav-item"> <a class="nav-link" href="brand.php">Manage Brand</a></li>
+                     <li class="nav-item"> <a class="nav-link" href="Type.php">Manage Tools Type</a></li>
                  </ul>
              </div>
          </li>
@@ -69,7 +69,7 @@
              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                  <span class="menu-title">tools management</span>
                  <i class="menu-arrow"></i>
-                 <i class="mdi mdi-Toolsmenu-icon"></i>
+                 <i class="mdi mdi-archive menu-icon"></i>
              </a>
              <div class="collapse" id="ui-basic">
                  <ul class="nav flex-column sub-menu">
