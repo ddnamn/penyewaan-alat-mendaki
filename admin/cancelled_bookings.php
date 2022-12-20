@@ -30,7 +30,7 @@ if (isset($_REQUEST['del'])) {
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="modal-header">
-                  <h5 class="modal-title" style="float: left;">Manage Cars</h5>
+                  <h5 class="modal-title" style="float: left;">Atur Alat</h5>
                 </div>
 
                 <div class="table-responsive p-3">
@@ -38,20 +38,20 @@ if (isset($_REQUEST['del'])) {
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>Nama User</th>
                         <th>Booking No.</th>
-                        <th>Vehicle</th>
-                        <th>From Date</th>
-                        <th>To Date</th>
+                        <th>Nama Barang</th>
+                        <th>Dari Tanggal</th>
+                        <th>Sampai Tanggal</th>
                         <th>Status</th>
-                        <th>Posting date</th>
-                        <th>Action</th>
+                        <th>Tanggal Posting</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
                       $status = 2;
-                      $sql = "SELECT tblusers.FullName,tblbrands.BrandName,tblitems.itemTitle,tblitems.Vimage1,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber  from tblbooking join tblitems on tblitems.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tblitems.itemsBrand=tblbrands.id where tblbooking.Status=:status";
+                      $sql = "SELECT tblusers.FullName,tbltype.TypeName,tblitems.itemTitle,tblitems.Vimage1,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.ToolsId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber  from tblbooking join tblitems on tblitems.id=tblbooking.ToolsId join tblusers on tblusers.EmailId=tblbooking.userEmail join tbltype on tblitems.itemsBrand=tbltype.id where tblbooking.Status=:status";
                       $query = $dbh->prepare($sql);
                       $query->bindParam(':status', $status, PDO::PARAM_STR);
                       $query->execute();

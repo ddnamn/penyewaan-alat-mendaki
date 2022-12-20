@@ -38,10 +38,10 @@ if (isset($_REQUEST['del'])) {
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>Vehicle Title</th>
-                        <th>Brand </th>
-                        <th>Price Per day</th>
-                        <th>Action</th>
+                        <th>Nama Barang</th>
+                        <th>Tipe Barang </th>
+                        <th>Harga per hari</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>

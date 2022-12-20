@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306:3308
--- Generation Time: Dec 20, 2022 at 08:37 AM
+-- Generation Time: Dec 20, 2022 at 12:37 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -104,7 +104,8 @@ INSERT INTO `tblbooking` (`id`, `BookingNumber`, `userEmail`, `ToolsId`, `FromDa
 (4, 903014017, 'gerald@gmail.com', 8, '2021-01-16', '2021-01-21', 'service it very well', 0, '2021-01-16 20:16:13', NULL),
 (5, 901268746, 'gerald@gmail.com', 2, '2021-02-16', '2021-02-18', 'good conditions', 2, '2021-02-15 08:14:05', '2021-06-14 03:23:13'),
 (6, 958065939, 'john@gmail.com', 6, '2021-07-26', '2021-07-28', 'I need that Toolswhen it is well serviced', 1, '2021-07-26 07:05:08', '2021-07-26 07:23:02'),
-(7, 345568254, 'john@gmail.com', 3, '2021-07-29', '2021-07-31', 'That Toolsis beautiful', 0, '2021-07-26 07:14:47', NULL);
+(7, 345568254, 'john@gmail.com', 3, '2021-07-29', '2021-07-31', 'That Toolsis beautiful', 0, '2021-07-26 07:14:47', NULL),
+(8, 391717396, 'udin@gmail.com', 24, '2022-12-07', '2022-12-15', 'dafaf', 1, '2022-12-20 10:48:06', '2022-12-20 10:56:13');
 
 -- --------------------------------------------------------
 
@@ -168,15 +169,16 @@ INSERT INTO `tblitems` (`id`, `itemTitle`, `itemsBrand`, `itemsOverview`, `Price
 (6, 'Barang6', 4, 'Value for money product and it was so good It is more spacious than other sedans It looks like a luxurious car.', 400, 'image6.png', 'images (1).jpg', 'Nissan-Sunny-Interior-114977.jpg', 'nissan-sunny-8a29f53-500x375.jpg', 'new-nissan-sunny-photo.jpg', 1, 1, '2020-07-07 09:12:49', NULL),
 (7, 'Barang7', 5, 'Toyota Fortuner Features: It is a premium seven-seater SUV loaded with features such as LED projector headlamps with LED DRLs, LED fog lamp, and power-adjustable and foldable ORVMs. Inside, the Fortuner offers features such as power-adjustable driver seat, automatic climate control, push-button stop/start, and cruise control.\r\n\r\nToyota Fortuner Safety Features: The Toyota Fortuner gets seven airbags, hill assist control, vehicle stability control with brake assist, and ABS with EBD.', 3000, 'image1.png', 'toyota-fortuner-legender-rear-quarters-6e57.jpg', 'zw-toyota-fortuner-2020-2.jpg', 'download (1).jpg', '', NULL, 1, '2020-07-07 09:17:46', '2021-01-16 13:29:31'),
 (8, 'Barang8', 1, 'The new Vitara Brezza is a well-rounded package that is feature-loaded and offers good drivability. And it is backed by Maruti’s vast service network, which ensures a peace of mind to customers. The petrol motor could have been more refined and offered more pep.', 600, 'image5.png', 'marutisuzuki-vitara-brezza-rear-view37.jpg', 'marutisuzuki-vitara-brezza-dashboard10.jpg', 'marutisuzuki-vitara-brezza-boot-space59.jpg', 'marutisuzuki-vitara-brezza-boot-space28.jpg', NULL, NULL, '2020-07-07 09:23:11', NULL),
-(11, NULL, NULL, 'wwgwag', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:14:21', NULL),
-(12, NULL, NULL, 'wwag', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:14:35', NULL),
-(13, NULL, NULL, 'DVA', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, NULL, '2022-12-19 19:15:22', NULL),
-(14, NULL, NULL, 'wfwf', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:19:37', NULL),
-(15, NULL, NULL, 'afwF', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:24:17', NULL),
-(16, NULL, NULL, 'VS', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:24:39', NULL),
-(17, NULL, 4, 'VS', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:29:09', NULL),
-(18, 'db b', 3, 'agaga', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:30:27', NULL),
-(19, 'db b', 3, 'agaga', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-20 03:00:42', NULL);
+(20, 'TENDA LWY COMPASS 4P FIBER', 11, '- UKURAN : 210*210*140cm\r\n- KAPASITAS : 4-5 Orang\r\n- BAHAN : 100% Polyester PU 3000mm\r\n- INNER : Lapisan jaring\r\n- BERAT : 4,1 kg\r\n- TIANG : 7,9 mm fiberglass\r\n- Dua Pintu\r\n- Memiliki kanopi (Seperti foto)\r\n- UKURAN PACKING : 60*15*15 cm', 60000, 'Tenda1-1_0004_a4f2c89d4f4fb1120927e6a4b481462f.jpg', 'Tenda1-1_0003_7cdb1f31e3ca5adb0fe238444234e0ab.jpg', 'Tenda1-1_0002_86eb8246cea450f2b8fae631b38d6abf.jpg', 'Tenda1-1_0001_227f5642cab5333c04ad26a3575ef543.jpg', 'Tenda1-1_0000_fff42f9b8d31422f364ca24df4668e76.jpg', 1, NULL, '2022-12-20 09:27:02', NULL),
+(21, 'Tenda Camping Hillman Cloud Up Smart Kap 2-3 Orang Outdoor Tent', 11, 'Outer : ( 210T Polyester Ripstop , PU 3000mm ) full sealed tape\r\nInner : 210T Polyester PU 3000 mm\r\nFloor: Oxford Nylon 210D Seal taped\r\nFrame : Alumunium alloy Diameter 8.5 cm\r\nSize : 210 + 60 X 140 X 110 cm\r\nPackaging : 48 x 16 x 16 cm\r\nWeight : 2.3 kg\r\nCapacity : 2 Person', 55000, 'Tenda-2_0000_sg-11134201-22100-kkb1z8c9gxiv14.jpg', 'Tenda-2_0001_sg-11134201-22100-5b7xu3a9gxiv3f.jpg', 'Tenda-2_0002_sg-11134201-22100-1s9vajc9gxive6.jpg', 'Tenda-2_0003_sg-11134201-22100-x6r96kb9gxiv32.jpg', 'Tenda-2_0004_sg-11134201-22100-wdiabxa9gxiv5c.jpg', 1, 1, '2022-12-20 09:33:29', NULL),
+(22, 'Decathlon Quechua Tenda Camping Family Arpenaz 4.1 & Forester Enigma Original', 11, '- Kapasitas : Ruang tamu yang luas 5.9 m² dengan alas lantai, kamar tidur 210 x 240 cm.\r\n- Mudah dibongkar/pasang : Tiang sederhana: tiang dengan kode warna.\r\n- Mengurangi panas : Flysheet berlapis di atas ruang tamu untuk ventilasi dan mengurangi kondensasi.\r\n- Kegelapan\r\n- Daya tahan : Menahan angin 50km/jam (Daya 6): diuji di terowongan angin pada bidang berputar\r\n- Mudah dibawa : Strap angkut Mencakup 60 X 24 x 24 cm 35 liter Berat: 9.8 kg\r\n- Tahan air : Diuji shower dengan 200 mm air / jam / m² (hujan tropis) dan uji lapangan.\r\n', 57000, 'Tenda-3_0000_735f13fea4375fdeecd72c0a84009d93.jpg', 'Tenda-3_0001_0b4aa1a7ec2499d72ad5436b8b578ac7.jpg', 'Tenda-3_0002_be25fdb76c6b3c49ec729b0b1a2b3497.jpg', 'Tenda-3_0003_4d69877e034f1fbb93bff9f9ed80f7e6.jpg', 'Tenda-3_0004_917ffc90bcd1c9bb16e48efd3d211d53.jpg', 1, NULL, '2022-12-20 09:42:02', NULL),
+(23, 'TENDA WILDSHELL SERIES KENAWA 2 PERSON FRAME ALLOY ', 11, '- Kenawa tent 2 (person) Original\r\n- Warna : Blue\r\n- Ukuran Tenda : 210 x (50+140+50) x 120\r\n- Flysheet lapisan luar : 210T Polyester PU3000mm\r\n- Inner bagian dalam : 210T Polyester PU5000mm\r\n- Alas : 210T Polyester Cloth With PU Coating\r\n- Double Door Storm Proof\r\n- Jenis Tiang: Alumunium 7,9MM\r\n- Pasak : 10pcs\r\n- Berat : 1,9kgs\r\n- Ukuran Kemasan: 50cm x 12cm x 15cm', 76000, 'Tenda-4_0000_55b776d0f02a3ae35adc14daa3cc8279.jpg', 'Tenda-4_0001_538df075b02786ff2855d5afb2aafc59.jpg', 'Tenda-4_0002_97632d5c336e5eae7f78db42035cf17b.jpg', 'Tenda-4_0003_ea288d9c3d1229c645ce37e44850a31a.jpg', 'Tenda-4_0004_171b728dec328d3390656d602c93dc2c.jpg', 1, 1, '2022-12-20 09:46:10', NULL),
+(24, 'Tenda Camping Forester Enigma Kapasitas 6 Orang', 11, 'Brand : Forester\r\nTipe : Enigma\r\nSize : (180+250) x 220 x 160 cm\r\nFlysheet : 190T PU 1500M Polyester Seam taped waterproof ability\r\nInner Tent : 170T Breathable Polyester\r\nGround Sheet : PE (120G/m2)\r\nPoles : 3 pcs Fiber Glass Poles ; 2 Pcs Steel Poles \r\nKapasitas : 4-6 Orang', 97000, 'Tenda-5_0002_bbb09e44843887d3b8292f202936b20f.jpg', 'Tenda-5_0003_aaab01598d004be9dd1034a0bf427a5a.jpg', 'Tenda-5_0004_c439a201d66c20c2aa669453201777d3.jpg', 'Tenda-5_0001_7b27fa1bda001bbd52b647c4eb878595.jpg', 'Tenda-5_0000_de9f8a7b6b7717763f7d62a5e74e79ba.jpg', 1, NULL, '2022-12-20 09:48:44', NULL),
+(25, 'tas carrier zarventure merbabu 60+5 liter.', 12, '-Bahan kordura kanvas premium tebal\r\n-Kapasitas 60+5 liter\r\n-Doubel frame besi alumunium dibelakang yg mudah dilepas\r\n-Busa2 tebal di pundak, punggung, dan pinggang untuk kenyamanan pemakaian\r\n-Backsystem Adjustable / Bisa diubah ubah sesuai ukurang punggung\r\n-Tali-tali pengatur dan penyeimbang (adjustable).\\\r\n-Bisa bongkar muat dari bagian bawah (terdapat zipper/sleting dibagian bawah)\r\n-Nyaman di pakai.\r\n-kualitas di jamin bagus dan awet,tidak bagus free retur', 55000, 'Kariel1_0000_9b064fd42f0c185b76d14d0b0ea7c30f.jpg', 'Kariel1_0001_7af6d7e8ea1dbe94e718c7fc2c883539.jpg', 'Kariel1_0002_baf18d382871a4209d6ecaa0aa2e7331.jpg', 'Kariel1_0003_488e9393315d35c1067239168b3c7636.jpg', 'Kariel1_0004_6079ef31f6c3f484c9b47b37f2e06030.jpg', 1, 1, '2022-12-20 10:18:50', NULL),
+(26, 'tas hiking outdoor ADVENTURE GEAR ACONCAGUA karrier tnf summits 60 - 70 LITER', 12, '-Bahan kordura tebal\r\n-Kapasitas 70 liter\r\n-Dobel frame besi alumunium dibelakang yg mudah dilepas\r\n-Busa2 tebal di pundak, punggung, dan pinggang untuk kenyamanan p-pemakaian\r\n-Backsystem Adjustable / Bisa diubah ubah sesuai ukurang punggung\r\n-Tali-tali pengatur dan penyeimbang (adjustable).\r\n-resleting di tengah bisa ambil barang di bagian bawah.\r\n-Nyaman di pakai.', 57000, 'Kariel2_0003_f04f68804eb9c66e877669811fa4288d.jpg', 'Kariel2_0004_45965f0c8a796e03355380cacfebac81.jpg', 'Kariel2_0002_8f3772d94359f14f771d23f31ccb2680.jpg', 'Kariel2_0001_0e155118662551a23066792f884d4181.jpg', 'Kariel2_0000_8ea51ebc698c93d636bb245ba1e37533.jpg', 1, NULL, '2022-12-20 10:20:16', NULL),
+(27, 'tas carrier adventure gear AG & ZA merapi 60+5 liter.', 12, '-Bahan kordura premium tebal\r\n-Kapasitas 60 liter (BISA UP)\r\n-Doubel frame besi alumunium dibelakang yg mudah dilepas\r\n-Busa2 tebal di pundak, punggung, dan pinggang untuk kenyamanan pemakaian\r\n-Backsystem Adjustable / Bisa diubah ubah sesuai ukurang punggung\r\n-Tali-tali pengatur dan penyeimbang (adjustable).\\\r\n-Bisa bongkar muat dari bagian bawah (terdapat zipper/sleting dibagian bawah)\r\n-Nyaman di pakai.\r\n-kualitas di jamin bagus dan awet,tidak bagus free retur', 78000, 'Kariel3_0000_5d1dde6a6c9f5b2133f8e249f5756f50.jpg', 'Kariel3_0001_e2247507390f211603f0e458745e1ac9.jpg', 'Kariel3_0002_865261bf418e74c93a86b6fd6b0e8842.jpg', 'Kariel3_0003_43de15ee1a3ea70fb04d18903ca00c5d.jpg', 'Kariel3_0004_b0791ee4f7be08bf796de3fac17ba0cf.jpg', 1, 1, '2022-12-20 10:21:40', NULL),
+(28, 'tas Carrier  Elektra 45 L', 12, '- Ukuran 45+ . Bahan Cordura + Polyester nylon\r\n- Tempat Water Bleder 2 liter\r\n- Slot Botol dan matrasl kiri kanan.\r\n- Jahitan BARTEX ( DOUBLE JAHITAN)\r\n- belum termasuk raincover , seusiai variasi \r\n- busa tebal empuk nyaman di punggung.\r\n- murah kualitas bagus.', 60000, 'Kariel4_0000_f88747b73e87888424ed27da76ee3e9a.jpg', 'Kariel4_0001_34bfde31586dd17c0344673aececbfb8.jpg', 'Kariel4_0002_dd92471e0056393f331b269ce9898236.jpg', 'Kariel4_0003_fc33866a53897b5499659a30050c93a5.jpg', 'Kariel4_0004_9d1713bf6644603f1e4c755effb4aec5.jpg', 1, 1, '2022-12-20 10:22:36', '2022-12-20 11:25:52'),
+(29, 'tas carrier zarventure EQUATOR 60+5 liter.', 12, '-Bahan kordura kanvas premium tebal\r\n-Kapasitas 60+5 liter\r\n-Doubel frame besi alumunium dibelakang yg mudah dilepas\r\n-Busa2 tebal di pundak, punggung, dan pinggang untuk kenyamanan pemakaian\r\n-Backsystem Adjustable / Bisa diubah ubah sesuai ukurang punggung\r\n-Tali-tali pengatur dan penyeimbang (adjustable).\\\r\n-Bisa bongkar muat dari bagian bawah (terdapat zipper/sleting dibagian bawah)\r\n-Nyaman di pakai.\r\n-kualitas di jamin bagus dan awet,tidak bagus free retur', 67000, 'Kariel5_0003_43ebaf0564cfde2d8d8385121b431d9f.jpg', 'Kariel5_0004_3b02e7ef53bb41f47da375ea2ebd6ea3.jpg', 'Kariel5_0002_aba9c4578f78d237a7b8abb6998895ec.jpg', 'Kariel5_0001_ace8506b80dc210c82f6b6b2806edda2.jpg', 'Kariel5_0000_3bd0220cb180b36239baf3776c0afa9f.jpg', 1, NULL, '2022-12-20 10:23:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -257,12 +259,11 @@ CREATE TABLE `tbltype` (
 --
 
 INSERT INTO `tbltype` (`id`, `TypeName`, `CreationDate`, `UpdationDate`) VALUES
-(3, 'Audi', '2021-06-18 16:25:03', '2021/07/24'),
-(4, 'Nissan', '2021-06-18 16:25:13', '2021/07/24'),
-(5, 'Toyota', '2021-06-18 16:25:24', '2021/07/24'),
-(7, 'Volkswagon', '2021-06-19 06:22:13', '2021/07/24'),
-(9, 'tenwf', '2022-12-19 18:18:15', '2022/12/19'),
-(10, 'af', '2022-12-19 18:19:57', NULL);
+(11, 'Tenda', '2022-12-20 08:44:55', NULL),
+(12, 'Kariel', '2022-12-20 08:45:01', NULL),
+(13, 'Senter', '2022-12-20 08:45:09', NULL),
+(14, 'Sleeping Bag', '2022-12-20 08:46:24', NULL),
+(15, 'Kompor Gas Mini', '2022-12-20 08:47:12', '2022/12/20');
 
 -- --------------------------------------------------------
 
@@ -371,7 +372,7 @@ ALTER TABLE `tbladmin`
 -- AUTO_INCREMENT for table `tblbooking`
 --
 ALTER TABLE `tblbooking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tblcompany`
@@ -383,7 +384,7 @@ ALTER TABLE `tblcompany`
 -- AUTO_INCREMENT for table `tblitems`
 --
 ALTER TABLE `tblitems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tblorders`
@@ -401,7 +402,7 @@ ALTER TABLE `tblsubscribers`
 -- AUTO_INCREMENT for table `tbltype`
 --
 ALTER TABLE `tbltype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tblusers`

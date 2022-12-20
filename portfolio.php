@@ -39,7 +39,7 @@ error_reporting(0);
   <?php include('includes/header.php'); ?>
   <section id="innerBanner">
     <div class="inner-content">
-      <h2><span>Portfolio</span><br>We provide high quality cars</h2>
+      <h2><span>Portfolio</span><br>We provide high quality product</h2>
       <div>
       </div>
     </div>
@@ -50,7 +50,7 @@ error_reporting(0);
       <div class="container">
         <div class="section-header">
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>berikut adalah galeri yang berupa kumpulan gambar produk berkualitas yang ada di toko kami</p>
         </div>
       </div>
 

@@ -23,7 +23,7 @@ check_login();
               <div class="card bg-gradient-info card-img-holder text-white" style="height: 140px;">
                 <div class="card-body">
                   <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                  <h4 class="font-weight-normal mb-3">Registered Users
+                  <h4 class="font-weight-normal mb-3">Pengguna yang terdaftar
                   </h4>
                   <?php
                   $sql = "SELECT id from tblusers ";
@@ -40,7 +40,7 @@ check_login();
               <div class="card bg-gradient-success card-img-holder text-white" style="height: 140px;">
                 <div class="card-body">
                   <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                  <h4 class="font-weight-normal mb-3">Listed Tools
+                  <h4 class="font-weight-normal mb-3">Barang yang Tersedia
                   </h4>
                   <?php
                   $sql1 = "SELECT id from tblitems ";
@@ -57,7 +57,7 @@ check_login();
               <div class="card bg-gradient-info card-img-holder text-white" style="height: 140px;">
                 <div class="card-body">
                   <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                  <h4 class="font-weight-normal mb-3">Total Bookings
+                  <h4 class="font-weight-normal mb-3">Total Penyewaan
                   </h4>
                   <?php
                   $sql2 = "SELECT id from tblbooking ";
@@ -67,23 +67,6 @@ check_login();
                   $bookings = $query2->rowCount();
                   ?>
                   <h2 class="mb-5"><?php echo htmlentities($bookings); ?></h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 stretch-card grid-margin">
-              <div class="card bg-gradient-success card-img-holder text-white" style="height: 140px;">
-                <div class="card-body">
-                  <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                  <h4 class="font-weight-normal mb-3">Total Tools Type 
-                  </h4>
-                  <?php
-                  $sql3 = "SELECT id from tbltype ";
-                  $query3 = $dbh->prepare($sql3);
-                  $query3->execute();
-                  $results3 = $query3->fetchAll(PDO::FETCH_OBJ);
-                  $brands = $query3->rowCount();
-                  ?>
-                  <h2 class="mb-5"><?php echo htmlentities($brands); ?></h2>
                 </div>
               </div>
             </div>

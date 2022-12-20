@@ -42,7 +42,7 @@ if (strlen($_SESSION['login']) == 0) {
     <?php include('includes/header.php'); ?>
     <section id="innerBanner">
       <div class="inner-content">
-        <h2><span>My Bookings</span><br>We create the opportunities!</h2>
+        <h2><span>Penyewaan Saya</span><br>Kami Melayani Dengan Sepenuh Hati</h2>
         <div>
         </div>
       </div>
@@ -84,7 +84,7 @@ if (strlen($_SESSION['login']) == 0) {
                         <ul class="vehicle_listing">
                           <?php
                           $useremail = $_SESSION['login'];
-                          $sql = "SELECT tblitems.Vimage1 as Vimage1,tblitems.itemTitle,tblitems.id as vid,tblbrands.BrandName,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.Status,tblitems.PricePerDay,DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totaldays,tblbooking.BookingNumber  from tblbooking join tblitems on tblbooking.VehicleId=tblitems.id join tblbrands on tblbrands.id=tblitems.itemsBrand where tblbooking.userEmail=:useremail";
+                          $sql = "SELECT tblitems.Vimage1 as Vimage1,tblitems.itemTitle,tblitems.id as vid,tbltype.TypeName,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.Status,tblitems.PricePerDay,DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totaldays,tblbooking.BookingNumber  from tblbooking join tblitems on tblbooking.ToolsId=tblitems.id join tbltype on tbltype.id=tblitems.itemsBrand where tblbooking.userEmail=:useremail";
                           $query = $dbh->prepare($sql);
                           $query->bindParam(':useremail', $useremail, PDO::PARAM_STR);
                           $query->execute();
@@ -96,10 +96,10 @@ if (strlen($_SESSION['login']) == 0) {
 
                               <li>
                                 <h4 style="color:red">Booking No. &nbsp;<?php echo htmlentities($result->BookingNumber); ?></h4>
-                                <div class="vehicle_img"> <a href="car_details.php?vhid=<?php echo htmlentities($result->vid); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" alt="image"></a> </div>
+                                <div class="vehicle_img"> <a href="alat_details.php?vhid=<?php echo htmlentities($result->vid); ?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" alt="image"></a> </div>
                                 <div class="vehicle_title">
 
-                                  <h6><a href="car_details.php?vhid=<?php echo htmlentities($result->vid); ?>"> <?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h6>
+                                  <h6><a href="alat_details.php?vhid=<?php echo htmlentities($result->vid); ?>"> <?php echo htmlentities($result->TypeName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h6>
                                   <p><b>From </b> <?php echo htmlentities($result->FromDate); ?> <b>To </b> <?php echo htmlentities($result->ToDate); ?></p>
                                   <div style="float: left">
                                     <p><b>Message:</b> <?php echo htmlentities($result->message); ?> </p>
@@ -135,7 +135,7 @@ if (strlen($_SESSION['login']) == 0) {
                                   <th>Rent / Day</th>
                                 </tr>
                                 <tr>
-                                  <td><?php echo htmlentities($result->itemTitle); ?>, <?php echo htmlentities($result->BrandName); ?></td>
+                                  <td><?php echo htmlentities($result->itemTitle); ?>, <?php echo htmlentities($result->TypeName); ?></td>
                                   <td><?php echo htmlentities($result->FromDate); ?></td>
                                   <td> <?php echo htmlentities($result->ToDate); ?></td>
                                   <td><?php echo htmlentities($tds = $result->totaldays); ?></td>

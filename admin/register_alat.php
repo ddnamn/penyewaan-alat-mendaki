@@ -60,14 +60,14 @@ if (isset($_POST['save'])) {
           <form class="forms-sample" method="post" enctype="multipart/form-data" class="form-horizontal">
             <div class=" col -md-12 card">
               <div class="modal-header">
-                <h5 class="modal-title" style="float: left;">Register Tools</h5>
+                <h5 class="modal-title" style="float: left;">Daftarkan Alat</h5>
               </div>
               <div class="col-md-12 mt-4">
                 <div class="row ">
                   <div class="form-group col-md-6 ">
-                    <label for="exampleInputPassword1">Select Type<span style="color:red">*</span></label>
+                    <label for="exampleInputPassword1">Pilih Tipe<span style="color:red">*</span></label>
                     <select name="typename" class="form-control" required>
-                      <option value="">Select </option>
+                      <option value="">Pilih </option>
                       <?php
                       $sql = "SELECT * from  tbltype";
                       $query = $dbh->prepare($sql);
@@ -83,19 +83,19 @@ if (isset($_POST['save'])) {
                     </select>
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="exampleInputName1">ToolsTitle<span style="color:red">*</span></label>
-                    <input type="text" name="itemtitle" class="form-control" value="" id="product" placeholder="Enter ToolsName" required>
+                    <label for="exampleInputName1">Nama alat<span style="color:red">*</span></label>
+                    <input type="text" name="itemtitle" class="form-control" value="" id="product" placeholder="Masukkan Nama Alat" required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-12">
-                    <label for="exampleInputName1">ToolsDescription<span style="color:red">*</label>
+                    <label for="exampleInputName1">Deskripsi Alat<span style="color:red">*</label>
                     <textarea class="form-control" name="description" rows="3" required></textarea>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-3">
-                    <label for="exampleInputName1">Price Per Day(in Rupiah)<span style="color:red">*</label>
+                    <label for="exampleInputName1">Harga Per Hari(in Rupiah)<span style="color:red">*</label>
                     <input type="text" name="priceperday" value="" placeholder="Enter Price" class="form-control" id="price" required>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ if (isset($_POST['save'])) {
             <div class="">&nbsp;</div>
             <div class=" col -md-12 card">
               <div class="modal-header">
-                <h5 class="modal-title" style="float: left;">specification</h5>
+                <h5 class="modal-title" style="float: left;">Spesifikasi</h5>
               </div>
               <div class="col-md-12 mt-4">
 

@@ -27,16 +27,6 @@
      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
        <span class="mdi mdi-menu"></span>
      </button>
-     <div class="search-field d-none d-md-block">
-       <form class="d-flex align-items-center h-100" action="#">
-         <div class="input-group">
-           <div class="input-group-prepend bg-transparent">
-             <i class="input-group-text border-0 mdi mdi-magnify"></i>
-           </div>
-           <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
-         </div>
-       </form>
-     </div>
      <ul class="navbar-nav navbar-nav-right">
        <li class="nav-item nav-profile dropdown">
          <?php
@@ -105,7 +95,7 @@
            <h6 class="p-3 mb-0">You have <?php echo htmlentities($totalnewbooking); ?> new notification</h6>
            <div class="dropdown-divider"></div>
            <?php
-            $sql = "SELECT tblbooking.userEmail,tblitems.itemTitle from tblbooking join tblitems on tblbooking.VehicleId=tblitems.id  where tblbooking.Status='0' ORDER BY tblbooking.id DESC LIMIT 3";
+            $sql = "SELECT tblbooking.userEmail,tblitems.itemTitle from tblbooking join tblitems on tblbooking.ToolsId=tblitems.id  where tblbooking.Status='0' ORDER BY tblbooking.id DESC LIMIT 3";
             $query = $dbh->prepare($sql);
             $query->execute();
             $results = $query->fetchAll(PDO::FETCH_OBJ);

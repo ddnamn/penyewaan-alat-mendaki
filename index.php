@@ -43,22 +43,22 @@ error_reporting(0);
     <div class="container">
       <div class="d-sm-flex align-items-center justify-content-between">
         <div>
-          <h1>Jumbotron Example</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>
+          <h3>Penyewaan Alat Pendakian <br> Area Gn. Semeru</h3>
+          <p>Jl. semeru no. 32, RT 05 RW 03, Malang, Jawa Timur</p>
+          <p>Kami menyediakan penyewaan alat pendakian di area sekitar gunung semeru, alat - alaa yang kami sewakan adalah alat yang sudah teruji dari segi kualitas, Harga yang kami tawarkan untuk penyewaan juga cukup terjangkau</p>
           <div class="tombol">
-          <div>
-            <?php   if(strlen($_SESSION['login'])==0)
-            { 
+            <div>
+              <?php if (strlen($_SESSION['login']) == 0) {
               ?>
-              <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="tombollogin" >Login / Register</a> 
-              <?php 
-            }?>
-         </div>
-       </div>
+                <a href="#loginform" data-toggle="modal" data-dismiss="modal" class="tombollogin">Login / Register</a>
+              <?php
+              } ?>
+            </div>
+          </div>
         </div>
-        
+
         <img src="img/jumbotron.png" class="img-fluid w-50 d-none d-sm-block">
-      </div>  
+      </div>
     </div>
   </section>
 
@@ -70,7 +70,7 @@ error_reporting(0);
       <div class="container">
         <div class="section-header">
           <h2>Alat Pendaki terpopuler</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Berikut adalah list alat pendakian yang cukup populer dalam beberapa pekan terakhir</p>
         </div>
 
         <div class="row">
@@ -85,7 +85,7 @@ error_reporting(0);
               <div class="col-lg-4">
                 <div class="box wow  fadeInLeft">
                   <div class="car-info-box">
-                    <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" style="height: 180px; width: 280px;" class="img-responsive" alt="image">
+                    <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" style="height: 180px; width: 280px;" class="img-responsive" alt="image">
                     </a>
                     <div class="car-title-m">
                       <h6><a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"> <?php echo substr($result->itemTitle, 0, 21); ?></a></h6>
@@ -111,17 +111,16 @@ error_reporting(0);
       <div class="container">
         <div class="section-header">
           <h2>Clients</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt fugiat culpa esse aute nulla. duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Berikut adalah beberapa brand ternama yang bekerjasama dengan kami</p>
         </div>
 
-        <!-- <div class="owl-carousel clients-carousel">
-            <img src="img/clients/client-1.png" alt="">
-            <img src="img/clients/client-2.png" alt="">
-            <img src="img/clients/client-3.png" alt="">
-            <img src="img/clients/client-4.png" alt="">
-            <img src="img/clients/client-5.png" alt="">
-            <img src="img/clients/client-6.png" alt="">
-          </div> -->
+        <div class="owl-carousel clients-carousel">
+            <img src="img/client/client1.png" alt="">
+            <img src="img/client/client2.png" alt="">
+            <img src="img/client/client3.png" alt="">
+            <img src="img/client/client4.png" alt="">
+            <img src="img/client/client5.png" alt="">
+          </div> 
 
       </div>
     </section><!-- #clients -->

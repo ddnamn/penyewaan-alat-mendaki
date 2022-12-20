@@ -48,16 +48,16 @@ if (isset($_REQUEST['aeid'])) {
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="modal-header">
-                  <h5 class="modal-title" style="float: left;">Booking Details</h5>
+                  <h5 class="modal-title" style="float: left;">Detail Penyewaan</h5>
                 </div>
                 <div class="table-responsive p-3" id="print">
                   <table class="table align-items-center table-flush table-hover table-bordered" id="">
                     <tbody>
                       <?php
                       $bid = intval($_GET['bid']);
-                      $sql = "SELECT tblusers.*,tblbrands.BrandName,tblitems.itemTitle,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber,
+                      $sql = "SELECT tblusers.*,tbltype.TypeName,tblitems.itemTitle,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.ToolsId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id,tblbooking.BookingNumber,
                     DATEDIFF(tblbooking.ToDate,tblbooking.FromDate) as totalnodays,tblitems.PricePerDay
-                    from tblbooking join tblitems on tblitems.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tblitems.itemsBrand=tblbrands.id where tblbooking.id=:bid";
+                    from tblbooking join tblitems on tblitems.id=tblbooking.ToolsId join tblusers on tblusers.EmailId=tblbooking.userEmail join tbltype on tblitems.itemsBrand=tbltype.id where tblbooking.id=:bid";
                       $query = $dbh->prepare($sql);
                       $query->bindParam(':bid', $bid, PDO::PARAM_STR);
                       $query->execute();
@@ -69,12 +69,12 @@ if (isset($_REQUEST['aeid'])) {
                           <h3 style="text-align:center; color:red">#<?php echo htmlentities($result->BookingNumber); ?> Booking Details </h3>
 
                           <tr>
-                            <th colspan="4" style="text-align:center;color:blue">User Details</th>
+                            <th colspan="4" style="text-align:center;color:blue">Detail User</th>
                           </tr>
                           <tr>
                             <th>Booking No.</th>
                             <td>#<?php echo htmlentities($result->BookingNumber); ?></td>
-                            <th>Name</th>
+                            <th>Nama User</th>
                             <td><?php echo htmlentities($result->FullName); ?></td>
                           </tr>
                           <tr>
@@ -84,13 +84,13 @@ if (isset($_REQUEST['aeid'])) {
                             <td><?php echo htmlentities($result->ContactNo); ?></td>
                           </tr>
                           <tr>
-                            <th>Address</th>
+                            <th>Alamat</th>
                             <td><?php echo htmlentities($result->Address); ?></td>
-                            <th>City</th>
+                            <th>Kota</th>
                             <td><?php echo htmlentities($result->City); ?></td>
                           </tr>
                           <tr>
-                            <th>Country</th>
+                            <th>Negara</th>
                             <td colspan="3"><?php echo htmlentities($result->Country); ?></td>
                           </tr>
 
@@ -98,26 +98,26 @@ if (isset($_REQUEST['aeid'])) {
                             <th colspan="4" style="text-align:center;color:blue">Booking Details</th>
                           </tr>
                           <tr>
-                            <th>Vehicle Name</th>
-                            <td><a href="edit_car.php?id=<?php echo htmlentities($result->vid); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->itemTitle); ?></td>
-                            <th>Booking Date</th>
+                            <th>Nama Barang</th>
+                            <td><a href="edit_car.php?id=<?php echo htmlentities($result->vid); ?>"><?php echo htmlentities($result->TypeName); ?> , <?php echo htmlentities($result->itemTitle); ?></td>
+                            <th>Tanggal Booking</th>
                             <td><?php echo htmlentities($result->PostingDate); ?>
                             </td>
                           </tr>
                           <tr>
-                            <th>From Date</th>
+                            <th>Dari Tanggal</th>
                             <td><?php echo htmlentities($result->FromDate); ?></td>
-                            <th>To Date</th>
+                            <th>Sampai Tanggal</th>
                             <td><?php echo htmlentities($result->ToDate); ?></td>
                           </tr>
                           <tr>
-                            <th>Total Days</th>
+                            <th>Total Hari</th>
                             <td><?php echo htmlentities($tdays = $result->totalnodays); ?></td>
-                            <th>Rent Per Days</th>
+                            <th>Harga Per Hari</th>
                             <td><?php echo htmlentities($ppdays = $result->PricePerDay); ?></td>
                           </tr>
                           <tr>
-                            <th colspan="3" style="text-align:center">Grand Total</th>
+                            <th colspan="3" style="text-align:center"> Total</th>
                             <td><?php echo htmlentities($tdays * $ppdays); ?></td>
                           </tr>
                           <tr>
@@ -131,7 +131,7 @@ if (isset($_REQUEST['aeid'])) {
                                   echo htmlentities('Cancelled');
                                 }
                                 ?></td>
-                            <th>Last pdation Date</th>
+                            <th>Terakhir di Update</th>
                             <td><?php echo htmlentities($result->LastUpdationDate); ?></td>
                           </tr>
 
@@ -140,9 +140,9 @@ if (isset($_REQUEST['aeid'])) {
                           ?>
                             <tr>
                               <td style="text-align:center" colspan="4">
-                                <a href="booking_details.php?aeid=<?php echo htmlentities($result->id); ?>" onclick="return confirm('Do you really want to Confirm this booking')" class="btn btn-primary"> Confirm Booking</a>
+                                <a href="booking_details.php?aeid=<?php echo htmlentities($result->id); ?>" onclick="return confirm('Apa Anda Yakin Mengkonfirmasi Booking ini?')" class="btn btn-primary"> Confirm Booking</a>
 
-                                <a href="booking_details.php?eid=<?php echo htmlentities($result->id); ?>" onclick="return confirm('Do you really want to Cancel this Booking')" class="btn btn-danger"> Cancel Booking</a>
+                                <a href="booking_details.php?eid=<?php echo htmlentities($result->id); ?>" onclick="return confirm('Apa Anda Yakin Membatalkan Booking ini?')" class="btn btn-danger"> Cancel Booking</a>
                               </td>
                             </tr>
                           <?php

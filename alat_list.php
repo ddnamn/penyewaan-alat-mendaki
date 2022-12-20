@@ -79,10 +79,10 @@ error_reporting(0);
                 foreach ($results as $result) {
               ?>
                   <div class="product-listing-m gray-bg">
-                    <div class="product-listing-img"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive" alt="Image" style="height: 150px; width:300px;" /> </a>
+                    <div class="product-listing-img"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive" alt="Image" style="height: 150px; width:300px;" /> </a>
                     </div>
                     <div class="product-listing-content">
-                      <h5><a href="car_details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->TypeName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h5>
+                      <h5><a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->TypeName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h5>
                       <p class="list-price">Rp<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
                       <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>" class="btn" style="background-color: #49a3ff;">View Details <span class="angle_arrow"><i class="fa fa-angle-right" style="color: #49a3ff; " aria-hidden="true"></i></span></a>
                     </div>
@@ -110,7 +110,7 @@ error_reporting(0);
                     ?>
 
                         <li class="gray-bg">
-                          <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/<?php echo htmlentities($result->Vimage1); ?>" alt="image"></a> </div>
+                          <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" alt="image"></a> </div>
                           <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->TypeName); ?> , <?php echo htmlentities($result->itemTitle); ?></a>
                             <p class="widget_price">Rp<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
                           </div>

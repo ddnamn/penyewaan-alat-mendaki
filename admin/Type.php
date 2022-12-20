@@ -48,14 +48,14 @@ if(isset($_GET['del']))
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                <div class="modal-header">
-                <h5 class="modal-title" style="float: left;">Type register</h5>
+                <h5 class="modal-title" style="float: left;">Tambahkan Tipe Alat</h5>
               </div>
               <div class="col-md-12 mt-4">
                 <form class="forms-sample" method="post" enctype="multipart/form-data" class="form-horizontal">
                   <div class="row ">
                     <div class="form-group col-md-6">
-                      <label for="exampleInputName1">Type Name</label>
-                      <input type="text" name="typename" class="form-control" value="" id="typename" placeholder="Enter type" required>
+                      <label for="exampleInputName1">Nama Tipe Alat</label>
+                      <input type="text" name="typename" class="form-control" value="" id="typename" placeholder="Masukkan Nama Tipe" required>
                     </div>
                   </div>
                   <button type="submit" style="float: left;" name="save" class="btn btn-primary btn-sm mr-2 mb-4">Save</button>
@@ -70,7 +70,7 @@ if(isset($_GET['del']))
                 <div class="modal-dialog modal-sm">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Edit Type details</h5>
+                      <h5 class="modal-title">Ubah Detail Tipe</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -94,10 +94,10 @@ if(isset($_GET['del']))
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Type Name</th>
-                      <th>Creation Date</th>
-                      <th>Updation date</th>
-                      <th>Action</th>
+                      <th>Nama Tipe</th>
+                      <th>Tanggal Menambahkan</th>
+                      <th>Tanggal Update</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>

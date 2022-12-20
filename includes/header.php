@@ -22,7 +22,7 @@
 
     <nav id="nav-menu-container">
       <ul class="nav-menu">
-        <li class="menu-active"><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="alat_list.php">daftar alat pendaki</a></li>
         <li><a href="portfolio.php">Gallery</a></li>
         <li><a href="about.php">About Us</a></li>

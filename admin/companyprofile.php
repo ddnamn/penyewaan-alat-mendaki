@@ -44,7 +44,7 @@ if(isset($_POST['submit']))
                         <div class="col-12">
                             <div class="card">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" style="float: left;">Company details</h5>
+                                    <h5 class="modal-title" style="float: left;">Detail Toko</h5>
                                 </div>
 
                                 <div class="card-body">
@@ -85,13 +85,13 @@ if(isset($_POST['submit']))
                                                 <div>&nbsp;</div>
                                                 <div class="row">
                                                     <div class="form-group row col-md-6">
-                                                        <label class="col-12" for="register1-username">Company name:</label>
+                                                        <label class="col-12" for="register1-username">Nama Toko:</label>
                                                         <div class="col-12">
                                                             <input type="text" class="form-control" name="companyname" value="<?php  echo $row->companyname;?>" >
                                                         </div>
                                                     </div>
                                                     <div class="form-group row col-md-6">
-                                                        <label class="col-12" for="register1-email">Company reg no.:</label>
+                                                        <label class="col-12" for="register1-email">Toko reg no.:</label>
                                                         <div class="col-12">
                                                             <input type="text" class="form-control" name="regno" value="<?php  echo $row->regno;?>" required='true'  >
                                                         </div>
@@ -99,14 +99,14 @@ if(isset($_POST['submit']))
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-group row col-md-6">
-                                                      <label class="col-12" for="register1-email">physical address:
+                                                      <label class="col-12" for="register1-email">Alamat :
                                                       </label>
                                                       <div class="col-12">
                                                         <input type="text" class="form-control" name="companyaddress" value="<?php  echo $row->companyaddress;?>" placeholder="Enter company address" required='true'  >
                                                     </div>
                                                 </div>
                                                 <div class="form-group row col-md-6">
-                                                    <label class="col-12" for="register1-email">Company email:</label>
+                                                    <label class="col-12" for="register1-email">email:</label>
                                                     <div class="col-12">
                                                         <input type="text" class="form-control" name="companyemail" value="<?php  echo $row->companyemail;?>" required='true' >
                                                     </div>
@@ -114,13 +114,13 @@ if(isset($_POST['submit']))
                                             </div>
                                             <div class="row"> 
                                                 <div class="form-group row col-md-6">
-                                                    <label class="col-12" for="register1-password">country:</label>
+                                                    <label class="col-12" for="register1-password">Negara:</label>
                                                     <div class="col-12">
                                                         <input type="text" class="form-control" name="country" value="<?php  echo $row->country;?>" required='true' >
                                                     </div>
                                                 </div>
                                                 <div class="form-group row col-md-6">
-                                                    <label class="col-12" for="register1-password">Contact Number:</label>
+                                                    <label class="col-12" for="register1-password">Nomor Kontak:</label>
                                                     <div class="col-12">
                                                         <input type="text" class="form-control" name="mobilenumber" value="0<?php  echo $row->companyphone;?>" required='true' placeholder="Enter company contact no" maxlength='10'>
                                                     </div>
