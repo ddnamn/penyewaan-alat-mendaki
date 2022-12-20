@@ -37,7 +37,7 @@ if(isset($_POST['login']))
             {            
                 if($row->Status=="1")
                 { 
-                    echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";              
+                    echo "<script> document.location ='dashboard.php'; </script>";              
                 } else
                 { 
                     echo "<script>
@@ -61,8 +61,8 @@ if(isset($_POST['login']))
                 <div class="row flex-grow">
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left p-5">
-                            <div class="brand-logo" align="center">
-                                <img class="img-avatar mb-3" src="" alt="">
+                            <div class="brand-logo" align="center" style="margin-bottom: 0rem ;" >
+                                <img class="img-avatar" src="img/ava.png" alt="">
                             </div>
                             <form role="form" id=""  method="post" enctype="multipart/form-data" class="form-horizontal">  
                                 <div class="form-group mb-3">

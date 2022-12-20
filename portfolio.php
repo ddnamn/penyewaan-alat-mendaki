@@ -63,7 +63,7 @@ error_reporting(0);
                 <img src="admin/img/kariel1.png" style=" height: 194px;" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">Toyota</h2>
+                    <h2 class="wow fadeInUp">Kariel</h2>
                   </div>
                 </div>
               </a>
@@ -76,7 +76,7 @@ error_reporting(0);
                 <img src="admin/img/image1.png" style=" height: 194px;" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">Nissan</h2>
+                    <h2 class="wow fadeInUp">Tenda</h2>
                   </div>
                 </div>
               </a>
@@ -89,7 +89,7 @@ error_reporting(0);
                 <img src="admin/img/image3.png" style=" height: 194px;" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">Nissan</h2>
+                    <h2 class="wow fadeInUp">Tenda</h2>
                   </div>
                 </div>
               </a>
@@ -102,7 +102,7 @@ error_reporting(0);
                 <img src="admin/img/kariel3.png" style=" height: 194px;" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">Toyota</h2>
+                    <h2 class="wow fadeInUp">Kariel</h2>
                   </div>
                 </div>
               </a>
@@ -115,7 +115,7 @@ error_reporting(0);
                 <img src="admin/img/kariel2.png" alt="" style=" height: 194px;">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">Saudi</h2>
+                    <h2 class="wow fadeInUp">Kariel</h2>
                   </div>
                 </div>
               </a>
@@ -128,7 +128,7 @@ error_reporting(0);
                 <img src="admin/img/image4.png" alt="" style=" height: 194px;">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">Fortuner </h2>
+                    <h2 class="wow fadeInUp">Tenda </h2>
                   </div>
                 </div>
               </a>
@@ -141,7 +141,7 @@ error_reporting(0);
                 <img src="admin/img/image5.png" alt="" style=" height: 194px;">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">Maruti </h2>
+                    <h2 class="wow fadeInUp">Tenda </h2>
                   </div>
                 </div>
               </a>
@@ -154,7 +154,7 @@ error_reporting(0);
                 <img src="admin/img/image2.png  " style=" height: 194px;" alt="">
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h2 class="wow fadeInUp">BMW</h2>
+                    <h2 class="wow fadeInUp">Kariel</h2>
                   </div>
                 </div>
               </a>

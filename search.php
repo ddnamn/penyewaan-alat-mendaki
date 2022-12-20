@@ -60,7 +60,7 @@ error_reporting(0);
                 $searchdata = $_POST['searchdata'];
                 $sql = "SELECT tblitems.id from tblitems 
             join tbltype on tbltype.id=tblitems.itemsBrand 
-            where tblitems.itemTitle=:search || tblitems.FuelType=:search || tbltype.TypeName=:search || tblitems.ModelYear=:search";
+            where tblitems.itemTitle=:search || tbltype.TypeName=:search ";
                 $query = $dbh->prepare($sql);
                 $query->bindParam(':search', $searchdata, PDO::PARAM_STR);
                 $query->execute();
@@ -74,7 +74,7 @@ error_reporting(0);
             <?php
             $sql = "SELECT tblitems.*,tbltype.TypeName,tbltype.id as bid  from tblitems 
         join tbltype on tbltype.id=tblitems.itemsBrand 
-        where tblitems.itemTitle=:search || tblitems.FuelType=:search || tbltype.TypeName=:search || tblitems.ModelYear=:search";
+        where tblitems.itemTitle=:search || tbltype.TypeName=:search ";
             $query = $dbh->prepare($sql);
             $query->bindParam(':search', $searchdata, PDO::PARAM_STR);
             $query->execute();
@@ -87,13 +87,8 @@ error_reporting(0);
                   <div class="product-listing-img"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive" alt="Image" style="width: 380px; height: 250px;" /> </a>
                   </div>
                   <div class="product-listing-content">
-                    <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->TypeName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h5>
-                    <p class="list-price">$<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
-                    <ul>
-                      <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?> seats</li>
-                      <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear); ?> model</li>
-                      <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType); ?></li>
-                    </ul>
+                    <h5><a href="alat-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->TypeName); ?> , <?php echo htmlentities($result->itemTitle); ?></a></h5>
+                    <p class="list-price">Rp<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
                     <a href="alat_details.php?vhid=<?php echo htmlentities($result->id); ?>" class="btn" style="background-color: #49a3ff;">View Details <span class="angle_arrow"><i class="fa fa-angle-right" style="color: #49a3ff; " aria-hidden="true"></i></span></a>
                   </div>
                 </div>
@@ -106,7 +101,7 @@ error_reporting(0);
           <aside class="col-md-3 col-md-pull-9">
             <div class="sidebar_widget">
               <div class="widget_heading">
-                <h5><i class="fa fa-car" aria-hidden="true"></i> Recently Listed Cars</h5>
+                <h5><i class="fa fa-car" aria-hidden="true"></i> Barang Terbaru</h5>
               </div>
               <div class="recent_addedcars">
                 <ul>
@@ -122,7 +117,7 @@ error_reporting(0);
                       <li class="gray-bg">
                         <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" alt="image"></a> </div>
                         <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->TypeName); ?> , <?php echo htmlentities($result->itemTitle); ?></a>
-                          <p class="widget_price">$<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
+                          <p class="widget_price">Rp<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
                         </div>
                       </li>
                   <?php
