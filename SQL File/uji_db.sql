@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 26, 2021 at 09:35 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Host: localhost:3306:3308
+-- Generation Time: Dec 20, 2022 at 08:37 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,7 +71,7 @@ CREATE TABLE `tbladmin` (
 --
 
 INSERT INTO `tbladmin` (`ID`, `Staffid`, `AdminName`, `UserName`, `FirstName`, `LastName`, `MobileNumber`, `Email`, `Status`, `Photo`, `Password`, `AdminRegdate`) VALUES
-(2, 1005, 'Admin', 'admin', 'John', 'Smith', 770546590, 'admin@gmail.com', 1, 'face19.jpg', '81dc9bdb52d04dc20036dbd8313ed055', '2021-06-21 10:18:39'),
+(2, 1005, 'Admin', 'admin', 'rio', 'ira', 770546590, 'admin@gmail.com', 1, '3f9470b34a8e3f526dbdb022f9f19cf7.jpg', '81dc9bdb52d04dc20036dbd8313ed055', '2021-06-21 10:18:39'),
 (9, 1234, 'Admin', 'tom', 'Agaba', 'tom', 757537271, 'tom@gmail.com', 1, 'pic_3.jpg', '25d55ad283aa400af464c76d713c07ad', '2021-06-21 07:08:48'),
 (29, 0, 'User', 'gerald', 'Gerald', 'Brain', 770546590, 'brain@gmail.com', 1, 'avatar15.jpg', '81dc9bdb52d04dc20036dbd8313ed055', '2021-07-24 10:40:34');
 
@@ -85,7 +85,7 @@ CREATE TABLE `tblbooking` (
   `id` int(11) NOT NULL,
   `BookingNumber` bigint(12) DEFAULT NULL,
   `userEmail` varchar(100) DEFAULT NULL,
-  `VehicleId` int(11) DEFAULT NULL,
+  `ToolsId` int(11) DEFAULT NULL,
   `FromDate` varchar(20) DEFAULT NULL,
   `ToDate` varchar(20) DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
@@ -98,38 +98,13 @@ CREATE TABLE `tblbooking` (
 -- Dumping data for table `tblbooking`
 --
 
-INSERT INTO `tblbooking` (`id`, `BookingNumber`, `userEmail`, `VehicleId`, `FromDate`, `ToDate`, `message`, `Status`, `PostingDate`, `LastUpdationDate`) VALUES
+INSERT INTO `tblbooking` (`id`, `BookingNumber`, `userEmail`, `ToolsId`, `FromDate`, `ToDate`, `message`, `Status`, `PostingDate`, `LastUpdationDate`) VALUES
 (1, 123456789, 'test@gmail.com', 1, '2020-07-07', '2020-07-09', 'What  is the cost?', 1, '2020-07-07 14:03:09', NULL),
 (2, 987456321, 'test@gmail.com', 4, '2020-07-19', '2020-07-24', 'hfghg', 1, '2020-07-09 17:49:21', '2021-01-16 20:09:42'),
 (4, 903014017, 'gerald@gmail.com', 8, '2021-01-16', '2021-01-21', 'service it very well', 0, '2021-01-16 20:16:13', NULL),
 (5, 901268746, 'gerald@gmail.com', 2, '2021-02-16', '2021-02-18', 'good conditions', 2, '2021-02-15 08:14:05', '2021-06-14 03:23:13'),
 (6, 958065939, 'john@gmail.com', 6, '2021-07-26', '2021-07-28', 'I need that Toolswhen it is well serviced', 1, '2021-07-26 07:05:08', '2021-07-26 07:23:02'),
 (7, 345568254, 'john@gmail.com', 3, '2021-07-29', '2021-07-31', 'That Toolsis beautiful', 0, '2021-07-26 07:14:47', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblbrands`
---
-
-CREATE TABLE `tblbrands` (
-  `id` int(11) NOT NULL,
-  `BrandName` varchar(120) NOT NULL,
-  `CreationDate` timestamp NULL DEFAULT current_timestamp(),
-  `UpdationDate` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblbrands`
---
-
-INSERT INTO `tblbrands` (`id`, `BrandName`, `CreationDate`, `UpdationDate`) VALUES
-(1, 'Maruti', '2021-06-18 16:24:34', '2021/07/24'),
-(2, 'BMW', '2021-06-18 16:24:50', '2021/07/24'),
-(3, 'Audi', '2021-06-18 16:25:03', '2021/07/24'),
-(4, 'Nissan', '2021-06-18 16:25:13', '2021/07/24'),
-(5, 'Toyota', '2021-06-18 16:25:24', '2021/07/24'),
-(7, 'Volkswagon', '2021-06-19 06:22:13', '2021/07/24');
 
 -- --------------------------------------------------------
 
@@ -155,7 +130,53 @@ CREATE TABLE `tblcompany` (
 --
 
 INSERT INTO `tblcompany` (`id`, `regno`, `companyname`, `companyemail`, `country`, `companyphone`, `companyaddress`, `companylogo`, `status`, `creationdate`) VALUES
-(4, '1005', 'ToolsRental', 'rental@gmail.com', 'Canada', 770546590, 'Luthuli Avenue', 'dealer-logo.jpg', '1', '2021-02-02 12:17:15');
+(4, '1005', 'ToolsRental', 'rental@gmail.com', 'Canada', 770546590, 'Luthuli Avenue', 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '1', '2021-02-02 12:17:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblitems`
+--
+
+CREATE TABLE `tblitems` (
+  `id` int(11) NOT NULL,
+  `itemTitle` varchar(150) DEFAULT NULL,
+  `itemsBrand` int(11) DEFAULT NULL,
+  `itemsOverview` longtext DEFAULT NULL,
+  `PricePerDay` int(11) DEFAULT NULL,
+  `Vimage1` varchar(120) DEFAULT NULL,
+  `Vimage2` varchar(120) DEFAULT NULL,
+  `Vimage3` varchar(120) DEFAULT NULL,
+  `Vimage4` varchar(120) DEFAULT NULL,
+  `Vimage5` varchar(120) DEFAULT NULL,
+  `antiair` int(11) DEFAULT NULL,
+  `tahankarat` int(11) DEFAULT NULL,
+  `RegDate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblitems`
+--
+
+INSERT INTO `tblitems` (`id`, `itemTitle`, `itemsBrand`, `itemsOverview`, `PricePerDay`, `Vimage1`, `Vimage2`, `Vimage3`, `Vimage4`, `Vimage5`, `antiair`, `tahankarat`, `RegDate`, `UpdationDate`) VALUES
+(1, 'Barang1', 1, 'Maruti Wagon R Latest Updates\r\n\r\nMaruti Suzuki has launched the BS6 Wagon R S-CNG in India. The LXI CNG and LXI (O) CNG variants now cost Rs 5.25 lakh and Rs 5.32 lakh respectively, up by Rs 19,000. Maruti claims a fuel economy of 32.52km per kg. The CNG Wagon R’s continuation in the BS6 era is part of the carmaker’s ‘Mission Green Million’ initiative announced at Auto Expo 2020.\r\n\r\nPreviously, the carmaker had updated the 1.0-litre powertrain to meet BS6 emission norms. It develops 68PS of power and 90Nm of torque, same as the BS4 unit. However, the updated motor now returns 21.79 kmpl, which is a little less than the BS4 unit’s 22.5kmpl claimed figure. Barring the CNG variants, the prices of the Wagon R 1.0-litre have been hiked by Rs 8,000.', 500, 'kariel2.png', 'maruti1.jpg', 'maruti3.jpg', 'steering-close-up-1288209207_930x620.jpg', 'boot-with-standard-luggage-202327489_930x620.jpg', 1, 1, '2020-07-07 07:04:35', '2021-07-23 20:08:26'),
+(2, 'Barang2', 2, 'BMW 5 Series price starts at ? 55.4 Lakh and goes upto ? 68.39 Lakh. The price of Petrol version for 5 Series ranges between ? 55.4 Lakh - ? 60.89 Lakh and the price of Diesel version for 5 Series ranges between ? 60.89 Lakh - ? 68.39 Lakh.', 1000, 'kariel3.png', 'bmw2.jpg', 'bmw5.jpg', 'bmw6.jpg', 'bmw7.jpg', 1, 1, '2020-07-07 07:12:02', '2021-07-23 19:42:22'),
+(3, 'Barang3', 3, 'As per ARAI, the mileage of Q8 is 0 kmpl. Real mileage of the vehicle varies depending upon the driving habits. City and highway mileage figures also vary depending upon the road conditions.', 3000, 'image3.png', '1920x1080_MTC_XL_framed_Audi-Odessa-Armaturen_Spiegelung_CC_v05.jpg', 'audi1.jpg', '1audiq8.jpg', 'audi-q8-front-view4.jpeg', 1, 1, '2020-07-07 07:19:21', '2020-07-07 07:28:02'),
+(4, 'Barang4', 4, 'Latest Update: Nissan has launched the Kicks 2020 with a new turbocharged petrol engine. You can read more about it here.\r\n\r\nNissan Kicks Price and Variants: The Kicks is available in four variants: XL, XV, XV Premium, and XV Premium(O).', 800, 'image2.png', 'kicksmodelimage.jpg', 'download.jpg', 'kicksmodelimage.jpg', '', NULL, NULL, '2020-07-07 07:25:28', NULL),
+(5, 'Barang5', 4, ' The GT-R packs a 3.8-litre V6 twin-turbocharged petrol, which puts out 570PS of max power at 6800rpm and 637Nm of peak torque. The engine is mated to a 6-speed dual-clutch transmission in an all-wheel-drive setup. The 2+2 seater GT-R sprints from 0-100kmph in less than 3', 2000, 'image4.png', 'Best-Nissan-Cars-in-India-New-and-Used-1.jpg', '2bb3bc938e734f462e45ed83be05165d.jpg', '2020-nissan-gtr-rakuda-tan-semi-aniline-leather-interior.jpg', 'images.jpg', 1, 1, '2020-07-07 07:34:17', '2021-07-11 11:58:05'),
+(6, 'Barang6', 4, 'Value for money product and it was so good It is more spacious than other sedans It looks like a luxurious car.', 400, 'image6.png', 'images (1).jpg', 'Nissan-Sunny-Interior-114977.jpg', 'nissan-sunny-8a29f53-500x375.jpg', 'new-nissan-sunny-photo.jpg', 1, 1, '2020-07-07 09:12:49', NULL),
+(7, 'Barang7', 5, 'Toyota Fortuner Features: It is a premium seven-seater SUV loaded with features such as LED projector headlamps with LED DRLs, LED fog lamp, and power-adjustable and foldable ORVMs. Inside, the Fortuner offers features such as power-adjustable driver seat, automatic climate control, push-button stop/start, and cruise control.\r\n\r\nToyota Fortuner Safety Features: The Toyota Fortuner gets seven airbags, hill assist control, vehicle stability control with brake assist, and ABS with EBD.', 3000, 'image1.png', 'toyota-fortuner-legender-rear-quarters-6e57.jpg', 'zw-toyota-fortuner-2020-2.jpg', 'download (1).jpg', '', NULL, 1, '2020-07-07 09:17:46', '2021-01-16 13:29:31'),
+(8, 'Barang8', 1, 'The new Vitara Brezza is a well-rounded package that is feature-loaded and offers good drivability. And it is backed by Maruti’s vast service network, which ensures a peace of mind to customers. The petrol motor could have been more refined and offered more pep.', 600, 'image5.png', 'marutisuzuki-vitara-brezza-rear-view37.jpg', 'marutisuzuki-vitara-brezza-dashboard10.jpg', 'marutisuzuki-vitara-brezza-boot-space59.jpg', 'marutisuzuki-vitara-brezza-boot-space28.jpg', NULL, NULL, '2020-07-07 09:23:11', NULL),
+(11, NULL, NULL, 'wwgwag', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:14:21', NULL),
+(12, NULL, NULL, 'wwag', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:14:35', NULL),
+(13, NULL, NULL, 'DVA', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, NULL, '2022-12-19 19:15:22', NULL),
+(14, NULL, NULL, 'wfwf', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:19:37', NULL),
+(15, NULL, NULL, 'afwF', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:24:17', NULL),
+(16, NULL, NULL, 'VS', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:24:39', NULL),
+(17, NULL, 4, 'VS', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:29:09', NULL),
+(18, 'db b', 3, 'agaga', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-19 19:30:27', NULL),
+(19, 'db b', 3, 'agaga', 60000, 'ca53ba82ba62d3d3f8707bde131ebd78.jpg', '', '', '', '', 1, 1, '2022-12-20 03:00:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -221,6 +242,31 @@ INSERT INTO `tblsubscribers` (`id`, `SubscriberEmail`, `PostingDate`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbltype`
+--
+
+CREATE TABLE `tbltype` (
+  `id` int(11) NOT NULL,
+  `TypeName` varchar(120) NOT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp(),
+  `UpdationDate` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbltype`
+--
+
+INSERT INTO `tbltype` (`id`, `TypeName`, `CreationDate`, `UpdationDate`) VALUES
+(3, 'Audi', '2021-06-18 16:25:03', '2021/07/24'),
+(4, 'Nissan', '2021-06-18 16:25:13', '2021/07/24'),
+(5, 'Toyota', '2021-06-18 16:25:24', '2021/07/24'),
+(7, 'Volkswagon', '2021-06-19 06:22:13', '2021/07/24'),
+(9, 'tenwf', '2022-12-19 18:18:15', '2022/12/19'),
+(10, 'af', '2022-12-19 18:19:57', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblusers`
 --
 
@@ -244,57 +290,7 @@ CREATE TABLE `tblusers` (
 
 INSERT INTO `tblusers` (`id`, `FullName`, `EmailId`, `Password`, `ContactNo`, `dob`, `Address`, `City`, `Country`, `RegDate`, `UpdationDate`) VALUES
 (2, 'Arinaitwe Gerald', 'gerald@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '0770546590', '15/01/1995', 'Muyenga', 'London', 'England', '2021-01-16 12:28:49', '2021-07-24 11:31:28'),
-(4, 'John Simith', 'john@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '0770546590', '15/01/1995', 'Tankhill', 'New York', 'America', '2021-07-26 07:01:37', '2021-07-26 07:25:59');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblitems`
---
-
-CREATE TABLE `tblitems` (
-  `id` int(11) NOT NULL,
-  `itemTitle` varchar(150) DEFAULT NULL,
-  `itemsBrand` int(11) DEFAULT NULL,
-  `itemsOverview` longtext DEFAULT NULL,
-  `PricePerDay` int(11) DEFAULT NULL,
-  `FuelType` varchar(100) DEFAULT NULL,
-  `ModelYear` int(6) DEFAULT NULL,
-  `SeatingCapacity` int(11) DEFAULT NULL,
-  `Vimage1` varchar(120) DEFAULT NULL,
-  `Vimage2` varchar(120) DEFAULT NULL,
-  `Vimage3` varchar(120) DEFAULT NULL,
-  `Vimage4` varchar(120) DEFAULT NULL,
-  `Vimage5` varchar(120) DEFAULT NULL,
-  `AirConditioner` int(11) DEFAULT NULL,
-  `PowerDoorLocks` int(11) DEFAULT NULL,
-  `AntiLockBrakingSystem` int(11) DEFAULT NULL,
-  `BrakeAssist` int(11) DEFAULT NULL,
-  `PowerSteering` int(11) DEFAULT NULL,
-  `DriverAirbag` int(11) DEFAULT NULL,
-  `PassengerAirbag` int(11) DEFAULT NULL,
-  `PowerWindows` int(11) DEFAULT NULL,
-  `CDPlayer` int(11) DEFAULT NULL,
-  `CentralLocking` int(11) DEFAULT NULL,
-  `CrashSensor` int(11) DEFAULT NULL,
-  `LeatherSeats` int(11) DEFAULT NULL,
-  `RegDate` timestamp NOT NULL DEFAULT current_timestamp(),
-  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblitems`
---
-
-INSERT INTO `tblitems` (`id`, `itemTitle`, `itemsBrand`, `itemsOverview`, `PricePerDay`, `FuelType`, `ModelYear`, `SeatingCapacity`, `Vimage1`, `Vimage2`, `Vimage3`, `Vimage4`, `Vimage5`, `AirConditioner`, `PowerDoorLocks`, `AntiLockBrakingSystem`, `BrakeAssist`, `PowerSteering`, `DriverAirbag`, `PassengerAirbag`, `PowerWindows`, `CDPlayer`, `CentralLocking`, `CrashSensor`, `LeatherSeats`, `RegDate`, `UpdationDate`) VALUES
-(1, 'Barang1', 1, 'Maruti Wagon R Latest Updates\r\n\r\nMaruti Suzuki has launched the BS6 Wagon R S-CNG in India. The LXI CNG and LXI (O) CNG variants now cost Rs 5.25 lakh and Rs 5.32 lakh respectively, up by Rs 19,000. Maruti claims a fuel economy of 32.52km per kg. The CNG Wagon R’s continuation in the BS6 era is part of the carmaker’s ‘Mission Green Million’ initiative announced at Auto Expo 2020.\r\n\r\nPreviously, the carmaker had updated the 1.0-litre powertrain to meet BS6 emission norms. It develops 68PS of power and 90Nm of torque, same as the BS4 unit. However, the updated motor now returns 21.79 kmpl, which is a little less than the BS4 unit’s 22.5kmpl claimed figure. Barring the CNG variants, the prices of the Wagon R 1.0-litre have been hiked by Rs 8,000.', 500, 'Petrol', 2019, 5, 'kariel2.png', 'maruti1.jpg', 'maruti3.jpg', 'steering-close-up-1288209207_930x620.jpg', 'boot-with-standard-luggage-202327489_930x620.jpg', 1, NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 07:04:35', '2021-07-23 20:08:26'),
-(2, 'Barang2', 2, 'BMW 5 Series price starts at ? 55.4 Lakh and goes upto ? 68.39 Lakh. The price of Petrol version for 5 Series ranges between ? 55.4 Lakh - ? 60.89 Lakh and the price of Diesel version for 5 Series ranges between ? 60.89 Lakh - ? 68.39 Lakh.', 1000, 'Petrol', 2018, 5, 'kariel3.png', 'bmw2.jpg', 'bmw5.jpg', 'bmw6.jpg', 'bmw7.jpg', 1, 1, 1, 1, 1, 1, 1, 1, NULL, 1, 1, 1, '2020-07-07 07:12:02', '2021-07-23 19:42:22'),
-(3, 'Barang3', 3, 'As per ARAI, the mileage of Q8 is 0 kmpl. Real mileage of the vehicle varies depending upon the driving habits. City and highway mileage figures also vary depending upon the road conditions.', 3000, 'Petrol', 2017, 5, 'image3.png', '1920x1080_MTC_XL_framed_Audi-Odessa-Armaturen_Spiegelung_CC_v05.jpg', 'audi1.jpg', '1audiq8.jpg', 'audi-q8-front-view4.jpeg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 07:19:21', '2020-07-07 07:28:02'),
-(4, 'Barang4', 4, 'Latest Update: Nissan has launched the Kicks 2020 with a new turbocharged petrol engine. You can read more about it here.\r\n\r\nNissan Kicks Price and Variants: The Kicks is available in four variants: XL, XV, XV Premium, and XV Premium(O).', 800, 'Petrol', 2020, 5, 'image2.png', 'kicksmodelimage.jpg', 'download.jpg', 'kicksmodelimage.jpg', '', 1, NULL, NULL, 1, NULL, NULL, 1, 1, NULL, NULL, NULL, 1, '2020-07-07 07:25:28', NULL),
-(5, 'Barang5', 4, ' The GT-R packs a 3.8-litre V6 twin-turbocharged petrol, which puts out 570PS of max power at 6800rpm and 637Nm of peak torque. The engine is mated to a 6-speed dual-clutch transmission in an all-wheel-drive setup. The 2+2 seater GT-R sprints from 0-100kmph in less than 3', 2000, 'Petrol', 2019, 5, 'image4.png', 'Best-Nissan-Cars-in-India-New-and-Used-1.jpg', '2bb3bc938e734f462e45ed83be05165d.jpg', '2020-nissan-gtr-rakuda-tan-semi-aniline-leather-interior.jpg', 'images.jpg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 07:34:17', '2021-07-11 11:58:05'),
-(6, 'Barang6', 4, 'Value for money product and it was so good It is more spacious than other sedans It looks like a luxurious car.', 400, 'CNG', 2018, 5, 'image6.png', 'images (1).jpg', 'Nissan-Sunny-Interior-114977.jpg', 'nissan-sunny-8a29f53-500x375.jpg', 'new-nissan-sunny-photo.jpg', 1, 1, NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 09:12:49', NULL),
-(7, 'Barang7', 5, 'Toyota Fortuner Features: It is a premium seven-seater SUV loaded with features such as LED projector headlamps with LED DRLs, LED fog lamp, and power-adjustable and foldable ORVMs. Inside, the Fortuner offers features such as power-adjustable driver seat, automatic climate control, push-button stop/start, and cruise control.\r\n\r\nToyota Fortuner Safety Features: The Toyota Fortuner gets seven airbags, hill assist control, vehicle stability control with brake assist, and ABS with EBD.', 3000, 'Petrol', 2020, 5, 'image1.png', 'toyota-fortuner-legender-rear-quarters-6e57.jpg', 'zw-toyota-fortuner-2020-2.jpg', 'download (1).jpg', '', NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, 1, 1, 1, '2020-07-07 09:17:46', '2021-01-16 13:29:31'),
-(8, 'Barang8', 1, 'The new Vitara Brezza is a well-rounded package that is feature-loaded and offers good drivability. And it is backed by Maruti’s vast service network, which ensures a peace of mind to customers. The petrol motor could have been more refined and offered more pep.', 600, 'Petrol', 2018, 5, 'image5.png', 'marutisuzuki-vitara-brezza-rear-view37.jpg', 'marutisuzuki-vitara-brezza-dashboard10.jpg', 'marutisuzuki-vitara-brezza-boot-space59.jpg', 'marutisuzuki-vitara-brezza-boot-space28.jpg', NULL, 1, 1, 1, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, '2020-07-07 09:23:11', NULL);
+(4, 'udin', 'udin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '08908976878', '15/01/2002', 'jl.raya sidoarjo', 'Sidoarjo', 'indon', '2021-07-26 07:01:37', '2022-12-20 04:26:36');
 
 --
 -- Indexes for dumped tables
@@ -319,15 +315,15 @@ ALTER TABLE `tblbooking`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblbrands`
---
-ALTER TABLE `tblbrands`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tblcompany`
 --
 ALTER TABLE `tblcompany`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tblitems`
+--
+ALTER TABLE `tblitems`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -343,17 +339,17 @@ ALTER TABLE `tblsubscribers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbltype`
+--
+ALTER TABLE `tbltype`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tblusers`
 --
 ALTER TABLE `tblusers`
   ADD PRIMARY KEY (`id`),
   ADD KEY `EmailId` (`EmailId`);
-
---
--- Indexes for table `tblitems`
---
-ALTER TABLE `tblitems`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -378,16 +374,16 @@ ALTER TABLE `tblbooking`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tblbrands`
---
-ALTER TABLE `tblbrands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
 -- AUTO_INCREMENT for table `tblcompany`
 --
 ALTER TABLE `tblcompany`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `tblitems`
+--
+ALTER TABLE `tblitems`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tblorders`
@@ -402,16 +398,16 @@ ALTER TABLE `tblsubscribers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `tbltype`
+--
+ALTER TABLE `tbltype`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `tblusers`
 --
 ALTER TABLE `tblusers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `tblitems`
---
-ALTER TABLE `tblitems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
